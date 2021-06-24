@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ccaPL online IDE</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h2>ccaPL Online IDE</h2>
+  </header>
+  <!--start of menu-->
+  <div class="menu" id="menuToggle">MENU</div>
+  <nav id="menuNav">
+    <a href="index.html">ccaPL IDE</a>
+    <a href="syntax.html">Syntax</a>
+    <a href="exampleCaseStudy.html">Example Case Study</a>
+  </nav>
+  <!-- end of menu-->
+  <div class = "header">ccaPL online IDE</div>
+  <div class = "controlPanel">
+  Select Language:
+  &nbsp; &nbsp;
+
+  <select id = "languages" class = "languages" onchange="changelanguage"
+  <option value = "ccaPL" > ccaPL </option>
+  </div>
+  <div class = "editor" if = "editor"></div>
+  <!-- editor where code input is put in -->
+  <div class = "buttonContainer"
+<button class = "btn" onclick="runCode()"> Run </button>
+</div>
+
+  <div class ="exeOutDiv"</div>
+  <!-- editor where execution traces output displayed -->
+  <div class ="comGraphDiv"</div>
+  <!-- editor where communication graph output displayed -->
+  <div class ="behgraphDiv"</div>
+  <!-- editor where behaviour graph output displayed -->
+  <!-- your content here... -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
