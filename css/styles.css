@@ -62,6 +62,61 @@ nav a:hover {
   background: #303036;
   cursor: pointer;
 }
+/*end nav*/
+*{margin: 0;}
+.header{
+  background: #5780a9;
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  padding: 4px;
+  font-family: sans-serif;
+}
+.underHeader {
+    background: #5780a9;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding: 4px;
+    font-family: sans-serif;
+}
+
+.controlPanel {
+    background: lightgray;
+    text-align: right;
+    padding: 4px;
+    font-family: sans-serif;
+}
+
+.languages {
+    background: #fff;
+    border: 1px solid gray;
+}
+
+#editor { height: 400px; }
+
+.buttonContainer {
+    text-align: right;
+    padding: 4px;
+}
+
+.btn {
+    background: #5780a9;
+    color: #fff;
+    padding: 8px;
+    border: 0;
+}
+
+.output {
+        padding: 4px;
+        border: 2px solid gray;
+        min-height: 100px;
+        width: 99%;
+        resize: none;
+
+}
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {

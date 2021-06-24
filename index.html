@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <div class = "header">
+    <header>
     <h2>ccaPL Online IDE</h2>
   </header>
+  </div>
   <!--start of menu-->
   <div class="menu" id="menuToggle">MENU</div>
   <nav id="menuNav">
@@ -18,20 +20,19 @@
     <a href="exampleCaseStudy.html">Example Case Study</a>
   </nav>
   <!-- end of menu-->
-  <div class = "header">ccaPL online IDE</div>
+  <div class = "underHeader">ccaPL online IDE</div>
   <div class = "controlPanel">
   Select Language:
   &nbsp; &nbsp;
-
-  <select id = "languages" class = "languages" onchange="changelanguage"
-  <option value = "ccaPL" > ccaPL </option>
+  <select id = "languages" class = "languages" onchange="changelanguage">
+  <option value = "ccaPL" > cca </option>
+  </select>
   </div>
   <div class = "editor" if = "editor"></div>
   <!-- editor where code input is put in -->
-  <div class = "buttonContainer"
-<button class = "btn" onclick="runCode()"> Run </button>
+  <div class = "buttonContainer">
+<button class = "btn" onclick="executeCode()"> Run </button>
 </div>
-
   <div class ="exeOutDiv"</div>
   <!-- editor where execution traces output displayed -->
   <div class ="comGraphDiv"</div>
