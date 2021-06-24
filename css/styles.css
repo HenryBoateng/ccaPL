@@ -109,7 +109,7 @@ nav a:hover {
     border: 0;
 }
 
-.output {
+.exeOutDiv {
         padding: 4px;
         border: 2px solid gray;
         min-height: 100px;
