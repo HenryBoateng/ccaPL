@@ -1,0 +1,308 @@
+/* MOBILE AND GLOBAL STYLES */
+
+
+/* applies to screens smaller than 500px (first breakpoint) */
+
+
+/* and above unless overwritten below */
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', serif;
+  background: #000;
+}
+
+/*nav starts*/
+
+nav {
+  display: none;
+  clear: both;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+nav a {
+  padding: 1.25em 1.5em;
+  color: #fff;
+  background: #000;
+  text-decoration: none;
+  transition: all 1.5s;
+}
+
+nav a:hover {
+  color: #000;
+  background: #fff;
+}
+
+.menu {
+  background: #000;
+  text-align: center;
+  color: #fff;
+  line-height: 5em;
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+
+.menuToggle {
+  display: flex;
+}
+
+.nav {
+  background: #000;
+  color: #fff;
+  list-style: none;
+  text-align: right;
+  padding: 20px 0 0 0;
+}
+
+.menu:hover {
+  color: #fff;
+  background: #303036;
+  cursor: pointer;
+}
+
+/*end nav*/
+
+* {
+  margin: 0;
+}
+
+.header {
+  background: #5780a9;
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  padding: 4px;
+  font-family: sans-serif;
+}
+
+.underHeader {
+  background: #5780a9;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 4px;
+  font-family: sans-serif;
+}
+
+.container{
+  display: flex;
+}
+
+.controlPanel {
+  background: #000;
+  color: #fff;
+  text-align: right;
+  padding: 4px;
+  font-family: sans-serif;
+}
+
+.languages {
+  background: #fff;
+  border: 1px;
+}
+
+/* changing layout of IDE */
+.resizeIDE {
+  width: 50%;
+  border: 1px solid #c1c1c1;
+  margin: 20px 10px;
+  padding: 0 5px;
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+
+}
+
+.output {
+  width: 50%;
+  height: 500px;
+  border: 1px solid #c1c1c1;
+  margin: 20px 10px;
+  padding: 0 5px;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  background: #fff;
+  color: #000;
+  overflow-y: auto;
+}
+
+.synContainer {
+  /* editor containter 2nd page*/
+  width: 298px;
+  border: 1px solid #c1c1c1;
+  margin: 20px 10px;
+  padding: 0 5px;
+  float: right;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+#editor {
+  border: 2px solid gray;
+  height: 400px;
+}
+
+.buttonContainer {
+  text-align: left;
+  padding: 4px;
+}
+
+/*btn design */
+.btn {
+  background: #5780a9;
+  color: #fff;
+  padding: 8px;
+  border: 0;
+}
+/*tutorial page*/
+#container1{
+  display:flex;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow:hidden;
+  color: #fff;
+}
+
+.sidebar{
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0px;
+  background: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active{
+  width: 240px;
+  display:flex;
+  flex-direction: column;
+}
+
+.sidebar .logo_content .logo{
+color: #fff;
+display: flex;
+height: 500px;
+width: 100%;
+align-items: center;
+opacity: 0;
+}
+
+.sidebar.active .logo_name{
+  opacity: 1;
+  pointer-events: none;
+}
+.sidebar .logo_name{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.active .logo_content .logo{
+opacity: 1;
+pointer-events: none;
+}
+
+.logo_content .logo{
+  color: #fff;
+  display: flex;
+  height: 90px;
+  width: 100%;
+  align-items: center;
+}
+
+ .logo_content.logo .logo_name{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.sidebar #secondbtn{
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+
+.sidebar.active #secondbtn{
+   left: 90%;
+}
+
+.sidebar ul{
+  margin-top: 20px;
+}
+
+.sidebar ul li{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 50px;
+  border-radius: 12px
+  }
+
+  .sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+  }
+  .sidebar ul li a:hover{
+    color: #11101d;
+    background:#fff;
+  }
+
+.sidebar .nav_list{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.active .nav_list{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+  .sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .para {
+  display: flex;
+  }
+
+  .para .sidebar.active  {
+  display: flex;
+  }
+/* TABLET STYLES */
+
+@media screen and (min-width: 500px) {
+  /* applies to screens wider than 499px */
+  /* DESKTOP STYLES */
+}
+
+@media screen and (min-width: 1000px) {
+  /* applies to screens wider than 999px */
+  /* nav ends */
+}
