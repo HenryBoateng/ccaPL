@@ -62,7 +62,6 @@ nav a:hover {
   background: #303036;
   cursor: pointer;
 }
-
 /*end nav*/
 
 * {
@@ -116,7 +115,6 @@ nav a:hover {
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 10px;
-
 }
 
 .output {
@@ -134,8 +132,8 @@ nav a:hover {
   overflow-y: auto;
 }
 
+/* editor containter 2nd page*/
 .synContainer {
-  /* editor containter 2nd page*/
   width: 298px;
   border: 1px solid #c1c1c1;
   margin: 20px 10px;
@@ -155,7 +153,6 @@ nav a:hover {
   text-align: left;
   padding: 4px;
 }
-
 /*btn design */
 .btn {
   background: #5780a9;
@@ -179,7 +176,7 @@ nav a:hover {
   left: 0;
   height: 100%;
   width: 0px;
-  background: #11101d;
+  background: #5780a9;
   padding: 6px 14px;
   transition: all 0.5s ease;
 }
@@ -226,6 +223,7 @@ pointer-events: none;
   font-weight: 400;
 }
 
+
 .sidebar #secondbtn{
   position: absolute;
   color: #fff;
@@ -257,7 +255,7 @@ pointer-events: none;
   border-radius: 12px
   }
 
-  .sidebar ul li a{
+.sidebar ul li a{
     color: #fff;
     display: flex;
     align-items: center;
@@ -265,8 +263,9 @@ pointer-events: none;
     transition: all 0.4s ease;
     border-radius: 12px;
   }
-  .sidebar ul li a:hover{
-    color: #11101d;
+
+.sidebar ul li a:hover{
+    color: #5780a9;
     background:#fff;
   }
 
@@ -280,21 +279,47 @@ pointer-events: none;
   pointer-events: auto;
 }
 
-  .sidebar ul li a i{
-    height: 50px;
-    min-width: 50px;
-    border-radius: 12px;
-    line-height: 50px;
-    text-align: center;
+  .introContent  {
+  position: absolute;
+  height 100%;
+  width: calc(100% - 40px);
+  left: 40px;
+  margin: auto;
+  display: flex;
+
   }
 
-  .para {
-  display: flex;
+  .introContent .text{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 12px;
+
   }
 
-  .para .sidebar.active  {
-  display: flex;
+  .sidebar.active ~ .introContent{
+    width: calc(100% - 280px);
+    left: 280px;
   }
+
+  .text .introFirstPara{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 500px;
+    height: 100px;
+    border: 1px;
+    border-color: white;
+    background-color: #778899;
+}
+
+.tryButton{
+  display: flex;
+  c
+  align-content: center;
+  background-color: #5780a9;
+  color: #fff;
+}
+
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {
