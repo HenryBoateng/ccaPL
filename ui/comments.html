@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial</title>
+    <title>CCA Tutorial</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class = tutorialPage>
+<body class = "tutorialPage">
   <div class = "header">
     <header>
-    <h2>Tutorial</h2>
+    <h2>CCA Tutorial</h2>
   </header>
   </div>
   <!--start of menu-->
   <div class="menu" id="menuToggle">MENU</div>
   <nav id="menuNav">
     <a href="index.html">CCA IDE</a>
-    <a href="introduction.html">Tutorial</a>
+    <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
   <div class = "underHeader">Comments</div>
@@ -65,14 +65,47 @@
     <a href ="let.html">CCA Let Statement</a>
   </li>
 </ul>
-</div>
-<div class = "introContent">
-  <div class="text">bla bla</div>
-</div>
+<ul class ="nav_list">
+<li>
+  <a href ="exercises.html">CCA Exercises</a>
+</li>
+</ul>
+<ul class ="nav_list">
+<li>
+  <a href ="examples.html">CCA Examples</a>
+</li>
+</ul>
 </div>
 
+<div class = "introContent">
+<div class = "AmbientNormal">
+  <div class="text">
+  <div class="introFirstPara">Comments are and have always been an essential part of coding, as it allows users to write within their code without the writen piece affecting the actual code itself. This can be beneficial for remembering past code or for peer coders.
+</div>
+  <div class="text">
+  <div class="introFirstPara">/* this is a multi-line comments, i.e.
+a comment that expands across many lines.
+*/ </div>
+</div>
+<div class = posBtn>
+<form action="amb.html" class="tryButton">
+    <input type="submit" value="Try it yourself" class="tryButton" id= "tryButton" />
+</form>
+</div>
+</div>
+<div class = "AmbientContentSibling">
+  <div class="text">
+  <div class="introFirstPara">// this is a single line comment. i.e. a comment that expands across a single line.</div>
+</div>
+<div class = posBtn>
+<form action="sibling.html" class="tryButton">
+    <input type="submit" value="Try it yourself" class="tryButton" id= "tryButton" />
+</form>
+</div>
+</div>
+</div>
+</div>
   <!-- your content here... -->
-    <script src="js/ide.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/lib/ace.js"></script>
     <script src="js/lib/theme-monokai.js"></script>

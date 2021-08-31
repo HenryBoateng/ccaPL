@@ -9,17 +9,17 @@
 <body class = "tutorialPage">
   <div class = "header">
     <header>
-    <h2>CCA Tutorial</h2>
+    <h2>Ambients</h2>
   </header>
   </div>
   <!--start of menu-->
   <div class="menu" id="menuToggle">MENU</div>
   <nav id="menuNav">
     <a href="index.html">CCA IDE</a>
-    <a href="introduction.html">CCA Tutorial</a>
+    <a href="introduction.html">Tutorial</a>
   </nav>
   <!-- end of menu-->
-  <div class = "underHeader">Introduction</div>
+  <div class = "underHeader">Ambients</div>
   <div class = "container" id = "container1">
 <!-- Boxicons CDN link -->
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
@@ -76,26 +76,22 @@
 </li>
 </ul>
 </div>
+
 <div class = "introContent">
+<div class = "AmbientNormal">
   <div class="text">
-  <div class="introFirstPara">The Calculus of Context-aware Ambients (CCA) is a process calculus for modelling the behaviour of mobile and context-aware systems. A process calculus is a formalism for the high-level
-description of interactions, communications, and
-synchronisations between a collection of independent
-processes. The main features of CCA are: mobility,
-context-awareness, and concurrency.
+  <div class="introFirstPara">The following process sends a hello message and receives an acknowledgement:
+    <h3> send(hello).recv(x).0 | P </h3> Give the specification of P. </div>
+</div>
+<form action="q1.html" class="tryButton">
+    <input type="submit" value="Question" class="tryButton" id= "amb" />
+</form>
+<form action="a1.html" class="tryButton">
+    <input type="submit" value="Answer" class="tryButton" id= "amb" />
+</form>
+
 </div>
 </div>
-<div class="text">
-<div class="introFirstPara">This website essentially allows developers to enhance their understanding of contextual aware languages via learning CCA. It comprises of the basics as well as has the environment for developers
-  to code using the CCA online IDE with examples to follow along.
-</div>
-</div>
-</div>
-
-
-
-
-
   <!-- your content here... -->
     <script src="js/scripts.js"></script>
     <script src="js/lib/ace.js"></script>

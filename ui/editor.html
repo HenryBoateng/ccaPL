@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial</title>
+    <title>CCA Tutorial</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class = tutorialPage>
+<body class = "tutorialPage">
   <div class = "header">
     <header>
-    <h2>Tutorial</h2>
+    <h2>CCA Tutorial</h2>
   </header>
   </div>
   <!--start of menu-->
   <div class="menu" id="menuToggle">MENU</div>
   <nav id="menuNav">
     <a href="index.html">CCA IDE</a>
-    <a href="introduction.html">Tutorial</a>
+    <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
   <div class = "underHeader">Editor</div>
@@ -65,24 +65,50 @@
     <a href ="let.html">CCA Let Statement</a>
   </li>
 </ul>
+<ul class ="nav_list">
+<li>
+  <a href ="exercises.html">CCA Exercises</a>
+</li>
+</ul>
+<ul class ="nav_list">
+<li>
+  <a href ="examples.html">CCA Examples</a>
+</li>
+</ul>
 </div>
-<div class = "introContent">
 
-  <div class="threeOutputs">
-  <div class="introFirstPara">The CCA editor has three different output types for the code, being execution output, communication graph and behaviour graph </div>
+  <div class = "introContent">
+    <div class="text">
+  <div class="introFirstPara">The CCA editor has three different output types for the code, being execution output, communication graph and behaviour graph. Try these examples below to see the differences. </div>
+  </div>
+  <div class="text">
+  <div class="introFirstPara">The Execution Output</div>
 </div>
-<div class="firstOutput">
-<div class="introFirstParaTwo">The exection output ...</div>
+<div class = posBtn>
 <form action="introLink.html">
-    <input type="submit" value="Try it yourself" class="tryButton" />
+    <input type="submit" value="Example" class="tryButton" id="tryButton"/>
 </form>
 </div>
-
+<div class="text">
+<div class="introFirstPara">The Communication Graph</div>
+</div>
+<div class = posBtn>
+<form action="comG.html">
+<input type="submit" value="Example" class="tryButton" id="tryButton" />
+</form>
+</div>
+<div class="text">
+<div class="introFirstPara">The Behaviour Graph</div>
+</div>
+<div class = posBtn>
+<form action="bHavG.html">
+<input type="submit" value="Example" class="tryButton" id="tryButton" />
+</form>
+</div>
 </div>
 </div>
 
   <!-- your content here... -->
-    <script src="js/ide.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/lib/ace.js"></script>
     <script src="js/lib/theme-monokai.js"></script>

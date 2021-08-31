@@ -149,6 +149,12 @@ nav a:hover {
   height: 400px;
 }
 
+#editorx {
+  border: 2px solid gray;
+  height: 100px;
+  width: 200px;
+}
+
 .buttonContainer {
   text-align: left;
   padding: 4px;
@@ -163,11 +169,13 @@ nav a:hover {
 /*tutorial page*/
 #container1{
   display:flex;
-  position: relative;
+  overflow-y: scroll;
+  position: absolute;
   min-height: 100vh;
   width: 100%;
-  overflow:hidden;
   color: #fff;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .sidebar{
@@ -179,6 +187,7 @@ nav a:hover {
   background: #5780a9;
   padding: 6px 14px;
   transition: all 0.5s ease;
+  overflow-y: scroll;
 }
 
 .sidebar.active{
@@ -286,6 +295,7 @@ pointer-events: none;
   left: 40px;
   margin: auto;
   display: flex;
+  text-align: center;
 
   }
 
@@ -293,6 +303,7 @@ pointer-events: none;
     font-size: 20px;
     font-weight: 500;
     margin-top: 12px;
+    display: flex;
   }
 
   .sidebar.active ~ .introContent{
@@ -300,33 +311,35 @@ pointer-events: none;
     left: 280px;
   }
 
-/* content explaination */
+/* content explaination tut page*/
 
   .introFirstPara{
     display: flex;
     flex-direction: column;
-    background-color: #5780a9;
-  }
-
-  .introFirstParaTwo{
-    display: flex;
-    flex-direction: column;
-    background-color: #5780a9;
-    border-radius: 5px;
-    border-color: #fff;
-    padding-top: 10px;
-    padding-bottom: 3px;
+    background: #5780a9;
+    border-radius: 2px;
+    padding: 1em;
+    border: 1px #ccc solid;
+    padding: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
   }
 
 .tryButton{
   display: flex;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  border-radius: 10px;
+  border-color: #fff;
+  justify-content: space-between;
 }
 
 .text {
   display: flex;
   flex-direction: column;
+  padding-bottom: 10px;
+  justify-content: space-between;
 }
-
 /*outputs explanation*/
 .threeOutputs{
   display: flex;
@@ -343,6 +356,21 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+#backbtn{
+  color: #fff;
+  text-decoration: none;
+}
+
+#tryButton{
+  color: #fff;
+  background: #5780a9;
+
+}
+.posBtn{
+  display: grid;
+  place-items: center;
 }
 /* TABLET STYLES */
 
