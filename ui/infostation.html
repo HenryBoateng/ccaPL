@@ -23,15 +23,7 @@
           <option value="ccagx">Behaviour Graph</option>
         </select>
       </div>
-      <div class="editor" id="editor">BEGIN_DECLS
-
-   def has(n) = { somewhere (this | n[true] | true) }
-   def at(n) = { somewhere (n[next (this | true)] | true) }
-   def at(n, m) = { somewhere (n[m[true] | true] | true) }
-   //length = 100
-   mode random
-   //display code
-END_DECLS
+      <div class="editor" id="editor">
 
 is1[
    !#recv(s,r,msg).if

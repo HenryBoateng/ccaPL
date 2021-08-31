@@ -9,17 +9,12 @@
   <body>
     <div class="header">
       <header>
-        <h2>CCA Online IDE</h2>
+        <h2>Question Two</h2>
       </header>
     </div>
     <!--start of menu-->
-    <div class="menu" id="menuToggle">MENU</div>
-    <nav id="menuNav">
-      <a href="index.html">CCA IDE</a>
-      <a href="introduction.html">CCA Tutorial</a>
-    </nav>
+
     <!-- end of menu-->
-    <div class="underHeader">CCA Online IDE</div>
      <div class = "container">
      <div class = "resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
@@ -29,31 +24,10 @@
         </select>
       </div>
       <div class="editor" id="editor">
-        /*
-           A simple wifi model in CCA.
-           - modelled as ambient named wifi.
-           - the boundry of the ambient is the range of the wireless access  point.
-           - a device is in range if it is a child ambient to wifi.
-        */
-
-        // wifi receives a message from the sender and forwards it to the recipient.
-        // Both the sender and the recipient must be in the range of the wifi.
-
-        wifi[
-          !#recv(sender, recipient, msg).if
-                   < has(recipient)>recipient#send(sender, msg).0
-                  else sender#send(wifi, error).0 //comm error!
-                  fi
-        ]
-        |
-        alice[
-          in wifi.@send(alice, bob, hello).@recv(s,ack).out.0
-        ]
-        |
-        bob[
-         in wifi.@recv(s,ack).@send(bob, s,thanks).out.0
-        ]
-
+        /* write a program that makes ambient 'Henry'
+         always look to recieve information regarding
+          'sender, recipient and message'
+           from any other sibling ambients */
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
@@ -64,7 +38,10 @@
       <div class="output"></div>
     </div>
       <!-- editor where communication graph output displayed -->
-
+      <div class = "header">
+        <header>
+        <h2> <a href="exercises.html" id = backbtn >Back</a></h2>
+      </header>
     <!-- your content here... -->
     <script src="js/ide.js"></script>
     <script src="js/scripts.js"></script>

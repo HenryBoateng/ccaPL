@@ -32,17 +32,6 @@
   The device can input or output to any of these slots.
 */
 
-BEGIN_DECLS
-    def state(n) = {somewhere (this | n[0] | true)} // state of self.
-    def state(device,value) = { somewhere (device[value[0] | true] | true) }// state of a device.
-
-
-    // display code
-   //display congruence
-  mode random
-  length = 20
-END_DECLS
-
 mcu[
   proc loop() {
      !recv().light_sensor::recv(t).

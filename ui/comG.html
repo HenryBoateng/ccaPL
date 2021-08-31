@@ -9,7 +9,7 @@
   <body>
     <div class="header">
       <header>
-        <h2>Hello Programme</h2>
+        <h2>Communication Graph</h2>
       </header>
     </div>
     <!--start of menu-->
@@ -18,12 +18,21 @@
      <div class = "container">
      <div class = "resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
-        <option value="ccag">Communication Graph</option>
           <option value="cca">Execution Output</option>
+          <option value="ccag">Communication Graph</option>
           <option value="ccagx">Behaviour Graph</option>
         </select>
       </div>
       <div class="editor" id="editor">
+    /*    The top row in the diagram lists the names of the
+  ambients involved in the system being executed.
+  The vertical dashed line represents the timeline for each
+  ambients (time increases from top to bottom).
+  A solid directed line from the timeline of an ambient to
+  that of another ambient (or in this case itself) indicates a message passing from one ambient to
+  another at a specific time point, with
+  the content of the message carried as a label to that line. */
+
         send(hello).0 | recv(x).0
       </div>
       <!-- editor where code input is put in -->
@@ -35,7 +44,10 @@
       <div class="output"></div>
     </div>
       <!-- editor where communication graph output displayed -->
-
+      <div class = "header">
+        <header>
+        <h2> <a href="editor.html" id = backbtn >Back</a></h2>
+      </header>
     <!-- your content here... -->
     <script src="js/ide.js"></script>
     <script src="js/scripts.js"></script>

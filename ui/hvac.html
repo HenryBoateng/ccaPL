@@ -26,11 +26,7 @@
       <div class="editor" id="editor">/*
    A simple HVAC system.
 */
-BEGIN_DECLS
-   def stateOf(device, value) = {somewhere (device[value[0] | true] |true)}
-   length = 50
-   mode random
-END_DECLS
+
 T_sensor[
    !recv(v).if
 	< true > Thermostat::send(v).send(v).0

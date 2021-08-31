@@ -33,17 +33,6 @@
 
 */
 
-BEGIN_DECLS
-    def state(n) = {somewhere (this | n[0] | true)} // state of self.
-    def state(device,value) = { somewhere (device[value[0] | true] | true) }// state of a device.
-    def noCard() = { somewhere (this | next (0) | next (true) |  true) }
-
-    // display code
-   //display congruence
-  mode random
-  length = 30
-END_DECLS
-
 lamp[  // This is an actuator. It only receives commands in the slot D0.
     !recv().home_gateway::recv(x).if
 		< x=0 and not state(off)>skip.find y:state(y) for del y.send().off[0]
