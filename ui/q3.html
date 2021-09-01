@@ -9,7 +9,7 @@
   <body>
     <div class="header">
       <header>
-        <h2>Execution Output</h2>
+        <h2>Question Three</h2>
       </header>
     </div>
     <!--start of menu-->
@@ -24,19 +24,12 @@
         </select>
       </div>
       <div class="editor" id="editor">
-/* this is the default output known as the
-execution output. This essentially outputs the */
-//The symbol ‘< -- >’ corresponds to the structural
-congruence relation
-// ‘-->’ represents the reduction relation
-/*The notation ‘{ root ===(hello)===> root}’ means that an ambient ‘root’ has
-sent a message ‘hello’ to another ambient ‘root’*/
-/*Other notations such as ‘Child to parent’ and
-‘Sibling to sibling’ provide information about the
-relationship between the sender ‘A’ and the receiver ‘B’. */
-//try this example bellow
+        //m and n are sibling ambients
+        //u is child ambient to n
+        //w is child ambient to m
+        //u sends a message hi to w.
+        //Specify n, m, u, and w for this communication to take place.
 
-        send(hello).0 | recv(x).0
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
@@ -49,7 +42,7 @@ relationship between the sender ‘A’ and the receiver ‘B’. */
       <!-- editor where communication graph output displayed -->
       <div class = "header">
         <header>
-        <h2> <a href="editor.html" id = backbtn >Back</a></h2>
+        <h2> <a href="exercises.html" id = backbtn >Back</a></h2>
       </header>
     <!-- your content here... -->
     <script src="js/ide.js"></script>

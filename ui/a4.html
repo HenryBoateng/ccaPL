@@ -9,7 +9,7 @@
   <body>
     <div class="header">
       <header>
-        <h2>Execution Output</h2>
+        <h2>Answer Four</h2>
       </header>
     </div>
     <!--start of menu-->
@@ -24,19 +24,25 @@
         </select>
       </div>
       <div class="editor" id="editor">
-/* this is the default output known as the
-execution output. This essentially outputs the */
-//The symbol ‘< -- >’ corresponds to the structural
-congruence relation
-// ‘-->’ represents the reduction relation
-/*The notation ‘{ root ===(hello)===> root}’ means that an ambient ‘root’ has
-sent a message ‘hello’ to another ambient ‘root’*/
-/*Other notations such as ‘Child to parent’ and
-‘Sibling to sibling’ provide information about the
-relationship between the sender ‘A’ and the receiver ‘B’. */
-//try this example bellow
+        /* Modify the previous program
+        to allow w to send an acknowledgement
+         thanks to u upon receiving the message. */
+      m[
+n::recv(s,r,msg).r#send(s,r,msg).0 |
+w#recv(s,r,msg).n::send(s,r,msg).0 |
+w[
+@recv(s,r,msg).@send(w,u,thanks).0
+]
+]
+|
+n[
+u#recv(s,r,msg).m::send(s,r,msg).0 |
+m::recv(s,r,msg).r#send(s,r,msg).0 |
+u[
+@send(u,w,hi).@recv(s,r,msg).0
+]
+]
 
-        send(hello).0 | recv(x).0
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
@@ -49,7 +55,7 @@ relationship between the sender ‘A’ and the receiver ‘B’. */
       <!-- editor where communication graph output displayed -->
       <div class = "header">
         <header>
-        <h2> <a href="editor.html" id = backbtn >Back</a></h2>
+        <h2> <a href="exercises.html" id = backbtn >Back</a></h2>
       </header>
     <!-- your content here... -->
     <script src="js/ide.js"></script>

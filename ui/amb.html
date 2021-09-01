@@ -24,7 +24,11 @@
         </select>
       </div>
       <div class="editor" id="editor">
-        n[ send(hello).0 | recv(x).0 ]
+//Ambients can communicate locally
+/*As one can see there is only one obvious ambient 'n', however
+by sendinh 'hello', the local rot ambient recieves it. */
+
+  n[ send(hello).0 | recv(x).0 ]
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
