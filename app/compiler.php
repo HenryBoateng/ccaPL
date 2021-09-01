@@ -20,7 +20,17 @@ if ($language == "cca") {
     $output = shell_exec(
         "$ccaJFP -e $filePath 2>&1"
     );
-    echo $output;
+    $split = preg_split('/(\d\.)/', $output);
+preg_match_all('/(\d\.)/', $output, $matches);
+$count = 0;
+foreach ($split as $s) {
+   echo $s;
+   echo "<br>";
+   if (isset($matches[0][$count])) {
+      echo $matches[0][$count];
+      $count++;
+   }
+}
 } /* this turns the dot files into pdf files using the dot variable
 and only gets one cca file */
 
