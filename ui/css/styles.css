@@ -367,6 +367,11 @@ flex-direction: column;
   display: grid;
   place-items: center;
 }
+
+.link{
+  text-decoration: none;
+  color: #fff;
+}
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {

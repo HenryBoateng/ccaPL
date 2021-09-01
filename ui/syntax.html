@@ -61,11 +61,6 @@
   </li>
 </ul>
 <ul class ="nav_list">
-  <li>
-    <a href ="let.html">CCA Let Statement</a>
-  </li>
-</ul>
-<ul class ="nav_list">
 <li>
   <a href ="exercises.html">CCA Exercises</a>
 </li>
@@ -80,13 +75,20 @@
   <div class="text">
   <div class="introFirstPara">The syntax of CCA is divided into 3 main syntactic categories: processes, denoted by P or Q; capabilities, denoted by M; and context-expressions, denoted by k. A context-expression is a condition over the context of the system; a capability denotes an atomic action; and a process describes a behaviour and is built from context-expressions and capabilities using specific operators as depicted below. Like in the π-calculus, the simplest entities in CCA are names, which are used to name things. We use lower-case letters n and x to denote names, some times with subscripts. We assume a countably-infinite set of names.
 </div>
+</div>
+<div class="text">
 <div class="introFirstPara">A Context-expression (CE in short) is a predicate (or a condition) over the context of the system. They are used in CCA to model context-aware behaviours; e.g. a process guarded by a CE only executes if the context of the system satisfies that CE. A CE is represented by a logical formula in the following syntax.
 </div>
-<div class="introFirstPara">A Context-expression (CE in short) is a predicate (or a condition) over the context of the system. They are used in CCA to model context-aware behaviours; e.g. a process guarded by a CE only executes if the context of the system satisfies that CE. A CE is represented by a logical formula in the following syntax.
 </div>
+<div class="text">
 <div class="introFirstPara">The CE true denotes any context. The CE 0 holds if the context is empty. A CE n = m holds if the names n and m are lexically identical. The CE this denotes the current process. Propositional operators such as negation (not), conjunction (and) and disjunction (or) expand their usual semantics to context expressions. A CE k1 | k2 represents a parallel composition of two contexts such that k1 holds for one and k2 holds for the other. A CE n[k] means that the internal context of the ambient n is described by k. A CE next k holds if k describes the internal context of some ambient. A CE somewhere k holds if k holds somewhere in the context. The operators somewhere and next are spatial modalities. The symbol ⊕ is sometimes used for next and the symbol ⬨ for somewhere.
 </div>
 </div>
+<div class="text">
+<div class="introFirstPara"> Learn more about the syntax <a class ="link" href="http://www.cse.dmu.ac.uk/~fsiewe/CCA/cca.html">here</a>
+</div>
+</div>
+
 </div>
 
   <!-- your content here... -->
