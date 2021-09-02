@@ -20,8 +20,8 @@ if ($language == "cca") {
     $output = shell_exec(
         "$ccaJFP -e $filePath 2>&1"
     );
-    $split = preg_split('/(\d\.)/', $output);
-preg_match_all('/(\d\.)/', $output, $matches);
+    $split = preg_split('/(\d+\.)/', $output);
+preg_match_all('/(\d+\.)/', $output, $matches); //regex to reformat output
 $count = 0;
 foreach ($split as $s) {
    echo $s;

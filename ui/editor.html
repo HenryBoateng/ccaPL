@@ -40,9 +40,29 @@
     <a href ="editor.html">CCA Editor</a>
   </li>
 </ul>
+<div class "logo_content">
+  <div class ="logo">
+  <div class="logo_name">Syntax</div>
+</div>
+</div>
 <ul class ="nav_list">
   <li>
-    <a href ="syntax.html">CCA Syntax</a>
+    <a href ="contextExpression.html">CCA Context Expressions</a>
+  </li>
+</ul>
+<ul class ="nav_list">
+  <li>
+    <a href ="capabilities.html">CCA Capabilities</a>
+  </li>
+</ul>
+<ul class ="nav_list">
+  <li>
+    <a href ="processes.html">CCA Processes</a>
+  </li>
+</ul>
+<ul class ="nav_list">
+  <li>
+    <a href ="locations.html">CCA Locations</a>
   </li>
 </ul>
 <ul class ="nav_list">
@@ -60,6 +80,11 @@
     <a href ="if.html">CCA If Statement</a>
   </li>
 </ul>
+<div class "logo_content">
+  <div class ="logo">
+  <div class="logo_name">Exercise</div>
+</div>
+</div>
 <ul class ="nav_list">
 <li>
   <a href ="exercises.html">CCA Exercises</a>
@@ -76,7 +101,22 @@
   <div class="introFirstPara">The CCA editor has three different output types for the code, being execution output, communication graph and behaviour graph. Try these examples below to see the differences. </div>
   </div>
   <div class="text">
-  <div class="introFirstPara">The Execution Output</div>
+  <div class="introFirstPara"><h3>The Execution Output</h3></div>
+</div>
+<div class="text">
+<div class="introFirstPara">This is the default output known as the
+execution output. This essentially outputs the */
+//The symbol ‘< -- >’ corresponds to the structural
+congruence relation.
+
+‘-->’ represents the reduction relation
+
+The notation ‘{ root ===(hello)===> root}’ means that an ambient ‘root’ has
+sent a message ‘hello’ to another ambient ‘root’
+
+Other notations such as ‘Child to parent’ and
+‘Sibling to sibling’ provide information about the
+relationship between the sender ‘A’ and the receiver ‘B’.</div>
 </div>
 <div class = posBtn>
 <form action="exeO.html">
@@ -84,7 +124,19 @@
 </form>
 </div>
 <div class="text">
-<div class="introFirstPara">The Communication Graph</div>
+<div class="introFirstPara"><h3>The Communication Graph</h3></div>
+</div>
+<div class="text">
+<div class="introFirstPara">The top row in the diagram lists the names of the
+  ambients involved in the system being executed.
+
+The vertical dashed line represents the timeline for each
+ambients (time increases from top to bottom).
+
+A solid directed line from the timeline of an ambient to
+that of another ambient (or in this case itself) indicates a message passing from one ambient to
+another at a specific time point, with
+the content of the message carried as a label to that line.</div>
 </div>
 <div class = posBtn>
 <form action="comG.html">
@@ -92,7 +144,23 @@
 </form>
 </div>
 <div class="text">
-<div class="introFirstPara">The Behaviour Graph</div>
+<div class="introFirstPara"><h3>The Behaviour Graph</h3></div>
+</div>
+<div class="text">
+<div class="introFirstPara">The top row in the diagram lists the names of the
+  ambients involved in the system being executed.
+  The vertical dashed line represents the timeline for each
+  ambients (time increases from top to bottom).
+
+  A solid directed line from the timeline of an ambient to
+    that of another ambient (or in this case itself) indicates a message passing from one ambient to
+    another at a specific time point, with
+    the content of the message carried as a label to that line.
+
+    A behaviour graph provides additional information about
+  the mobility of ambients. A box labelled as “X - -> Y” on the
+  timeline of an ambient B indicates that the ambient B has
+  moved from location X to location Y.</div>
 </div>
 <div class = posBtn>
 <form action="bHavG.html">

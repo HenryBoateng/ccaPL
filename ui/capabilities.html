@@ -19,7 +19,7 @@
     <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
-  <div class = "underHeader">If Statement</div>
+  <div class = "underHeader">Capabilities</div>
   <div class = "container" id = "container1">
 <!-- Boxicons CDN link -->
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
@@ -96,24 +96,50 @@
 </li>
 </ul>
 </div>
-
 <div class = "introContent">
-<div class = "AmbientNormal">
   <div class="text">
-  <div class="introFirstPara">If statements within CCA, is initiated via the if key word and is terminated via the fi keyword.
-     Like other programmgin languages, one can use the if statement as a decision-making statement which guides a program to make decisions based on specified criteria.The IF statement executes one set of code if a specified condition is met (TRUE) or another set of code evaluates to FALSE.</div>
+  <div class="introFirstPara">Capabilities are described by the following language:
+
+<table>
+  <tr>
+  <th>M ::= skip</th>
+  <th>a single transition</th>
+  </tr>
+  <tr>
+  <th>in n</th>
+  <th>move into the ambient n</th>
+  </tr>
+  <tr>
+  <th>out</th>
+  <th>move out of current location</th>
+  </tr>
+  <tr>
+  <th>del n</th>
+  <th>delete the ambient n</th>
+  </tr>
+  <tr>
+  <th>α x(z1,z2, . . . ,z`)</th>
+  <th>call the process x defined in location α,
+with actual parameters z1,z2, . . . ,z`</th>
+  </tr>
+  <tr>
+  <th>α recv(y1, y2, . . . , y`)</th>
+  <th>receive into y1, y2, . . . , y` a list of
+messages from location α</th>
+  </tr>
+  <tr>
+  <th>α send(z1,z2, . . . ,z`)</th>
+  <th>send a list of messages z1,z2, . . . ,z`
+to location α</th>
+  </tr>
+  </table>
 </div>
-<div class="text">
-<div class="introFirstPara">Here is an example of the if statement in action
-<div class = posBtn>
-<form action="ifExample.html" class="tryButton">
-    <input type="submit" value="Try it yourself" class="tryButton" id= "tryButton" />
-</form>
 </div>
 </div>
 </div>
-</div>
+
   <!-- your content here... -->
+    <script src="js/ide.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/lib/ace.js"></script>
     <script src="js/lib/theme-monokai.js"></script>

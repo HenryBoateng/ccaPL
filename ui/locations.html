@@ -19,7 +19,7 @@
     <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
-  <div class = "underHeader">If Statement</div>
+  <div class = "underHeader">Locations</div>
   <div class = "container" id = "container1">
 <!-- Boxicons CDN link -->
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
@@ -96,24 +96,45 @@
 </li>
 </ul>
 </div>
-
 <div class = "introContent">
-<div class = "AmbientNormal">
   <div class="text">
-  <div class="introFirstPara">If statements within CCA, is initiated via the if key word and is terminated via the fi keyword.
-     Like other programmgin languages, one can use the if statement as a decision-making statement which guides a program to make decisions based on specified criteria.The IF statement executes one set of code if a specified condition is met (TRUE) or another set of code evaluates to FALSE.</div>
-</div>
-<div class="text">
-<div class="introFirstPara">Here is an example of the if statement in action
-<div class = posBtn>
-<form action="ifExample.html" class="tryButton">
-    <input type="submit" value="Try it yourself" class="tryButton" id= "tryButton" />
-</form>
+  <div class="introFirstPara">Syntax of Locationtions α are described by the following language:
+<table>
+  <tr>
+  <th>α ::= @</th>
+  <th>any parent ambient</th>
+  </tr>
+  <tr>
+  <th>n@</th>
+  <th>parent n</th>
+  </tr>
+  <tr>
+  <th>#</th>
+  <th>any child ambient</th>
+  </tr>
+  <tr>
+  <th>n#</th>
+  <th>child n</th>
+  </tr>
+  <tr>
+  <th>::</th>
+  <th>any sibling ambient</th>
+  </tr>
+  <tr>
+  <th>n ::</th>
+  <th>sibling n</th>
+  </tr>
+  <tr>
+  <th>Ɛ</th>
+  <th>locally (empty string)</th>
+  </tr>
+  </table>
 </div>
 </div>
 </div>
 </div>
   <!-- your content here... -->
+    <script src="js/ide.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/lib/ace.js"></script>
     <script src="js/lib/theme-monokai.js"></script>

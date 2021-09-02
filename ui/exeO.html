@@ -19,21 +19,9 @@
      <div class = "resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
           <option value="cca">Execution Output</option>
-          <option value="ccag">Communication Graph</option>
-          <option value="ccagx">Behaviour Graph</option>
         </select>
       </div>
       <div class="editor" id="editor">
-/* this is the default output known as the
-execution output. This essentially outputs the */
-//The symbol ‘< -- >’ corresponds to the structural
-congruence relation
-// ‘-->’ represents the reduction relation
-/*The notation ‘{ root ===(hello)===> root}’ means that an ambient ‘root’ has
-sent a message ‘hello’ to another ambient ‘root’*/
-/*Other notations such as ‘Child to parent’ and
-‘Sibling to sibling’ provide information about the
-relationship between the sender ‘A’ and the receiver ‘B’. */
 //try this example bellow
 
         send(hello).0 | recv(x).0

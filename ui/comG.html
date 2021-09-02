@@ -18,20 +18,11 @@
      <div class = "container">
      <div class = "resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
-          <option value="cca">Execution Output</option>
-          <option value="ccag">Communication Graph</option>
-          <option value="ccagx">Behaviour Graph</option>
+        <option value="ccag">Communication Graph</option>
         </select>
       </div>
-      <div class="editor" id="editor">
-    /*    The top row in the diagram lists the names of the
-  ambients involved in the system being executed.
-  The vertical dashed line represents the timeline for each
-  ambients (time increases from top to bottom).
-  A solid directed line from the timeline of an ambient to
-  that of another ambient (or in this case itself) indicates a message passing from one ambient to
-  another at a specific time point, with
-  the content of the message carried as a label to that line. */
+      <div class="editor" id="editor">//try this example bellow
+
 
         send(hello).0 | recv(x).0
       </div>

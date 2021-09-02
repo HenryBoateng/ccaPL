@@ -19,7 +19,7 @@
     <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
-  <div class = "underHeader">If Statement</div>
+  <div class = "underHeader">Context Expressions</div>
   <div class = "container" id = "container1">
 <!-- Boxicons CDN link -->
 <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
@@ -96,24 +96,84 @@
 </li>
 </ul>
 </div>
-
 <div class = "introContent">
-<div class = "AmbientNormal">
   <div class="text">
-  <div class="introFirstPara">If statements within CCA, is initiated via the if key word and is terminated via the fi keyword.
-     Like other programmgin languages, one can use the if statement as a decision-making statement which guides a program to make decisions based on specified criteria.The IF statement executes one set of code if a specified condition is met (TRUE) or another set of code evaluates to FALSE.</div>
+  <div class="introFirstPara">Context expressions are described by the following language:
+
+<table>
+  <tr>
+  <th>κ ::= </th>
+  <th>Context Expressions</th>
+  </tr>
+  <tr>
+  <th>0</th>
+  <th>empty context</th>
+  </tr>
+  <tr>
+  <th>true</th>
+  <th>true</th>
+  </tr>
+  <tr>
+  <th>false</th>
+  <th>false</th>
+  </tr>
+  <tr>
+  <th>n = m</th>
+  <th>name match</th>
+  </tr>
+  <tr>
+  <th>this</th>
+  <th>hole</th>
+  </tr>
+  <tr>
+  <th>not κ</th>
+  <th>negation</th>
+  </tr>
+  <tr>
+  <th>κ1 | κ2</th>
+  <th>parallel composition</th>
+  </tr>
+  <tr>
+  <th>κ1 and κ2</th>
+  <th>conjunction</th>
+  </tr>
+  <tr>
+  <th>κ1 or κ2  </th>
+  <th>disjunction</th>
+  </tr>
+  <tr>
+  <th>n[κ]</th>
+  <th>location</th>
+  </tr>
+  <tr>
+  <th>next κ</th>
+  <th>spatial next modality</th>
+  </tr>
+  <tr>
+  <th>somewhere κ</th>
+  <th>somewhere modality</th>
+  </tr>
+  </table>
+
+
 </div>
-<div class="text">
-<div class="introFirstPara">Here is an example of the if statement in action
-<div class = posBtn>
-<form action="ifExample.html" class="tryButton">
-    <input type="submit" value="Try it yourself" class="tryButton" id= "tryButton" />
-</form>
+</div>
+
+  <div class="text">
+  <div class="introFirstPara">The inactivity process or null process 0
+does nothing
+terminates immediately
+is the unit element for the parallel composition of
+processes, i.e.
+0 | P ≡ P | 0 ≡ P
+where the symbol ‘≡’ means ‘is equivalent to’.
 </div>
 </div>
 </div>
 </div>
+
   <!-- your content here... -->
+    <script src="js/ide.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/lib/ace.js"></script>
     <script src="js/lib/theme-monokai.js"></script>

@@ -26,9 +26,12 @@
       <div class="editor" id="editor">/*
    A simple HVAC system.
 */
-
-T_sensor[
-   !recv(v).if
+BEGIN_DECLS
+   def stateOf(device, value) = {somewhere (device[value[0] | true] |true)}
+   length = 50
+   mode random
+END_DECLS
+T_sensor[!recv(v).if
 	< true > Thermostat::send(v).send(v).0
 	< stateOf(heating, on) > let t = v+2 in send(t).0
 	< stateOf(heating, off) > let t = v-1 in send(t).0
@@ -47,12 +50,14 @@ heating[
 Thermostat[
    !recv().T_sensor::recv(t).if
 	< t>21 > heating::send(0).send().0
-	< t< 15 > heating::send(1).send().0
+	< t<15 > heating::send(1).send().0
 	else send().0
    fi
    | send().0
 ]
-      </div>
+
+
+     </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
         <button class="btn" onclick="executeCode()"> Run </button>
