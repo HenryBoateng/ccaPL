@@ -1,22 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCA Online IDE</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="header">
-      <header>
-        <h2>Answer Three</h2>
-      </header>
-    </div>
-    <!--start of menu-->
 
-    <!-- end of menu-->
-     <div class = "container">
-     <div class = "resizeIDE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA Online IDE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <h2>Answer Three</h2>
+    </header>
+  </div>
+  <div class="container">
+    <div class="resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
           <option value="cca">Execution Output</option>
           <option value="ccag">Communication Graph</option>
@@ -31,38 +30,38 @@
         //Specify n, m, u, and w for this communication to take place.
 
         m[
-n::recv(s,r,msg).r#send(s,r,msg).0 |
-w[
-@recv(s,r,msg).0
-]
-]
-|
-n[
-u#recv(s,r,msg).m::send(s,r,msg).0 |
-u[
-@send(u,w,hi).0
-]
-]
-
+        n::recv(s,r,msg).r#send(s,r,msg).0 |
+        w[
+        @recv(s,r,msg).0
+        ]
+        ]
+        |
+        n[
+        u#recv(s,r,msg).m::send(s,r,msg).0 |
+        u[
+        @send(u,w,hi).0
+        ]
+        ]
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
         <button class="btn" onclick="executeCode()"> Run </button>
       </div>
-      </div>
-
-      <div class="output"></div>
     </div>
-      <!-- editor where communication graph output displayed -->
-      <div class = "header">
-        <header>
-        <h2> <a href="exercises.html" id = backbtn >Back</a></h2>
-      </header>
-    <!-- your content here... -->
-    <script src="js/ide.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/lib/ace.js"></script>
-    <script src="js/lib/theme-monokai.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </body>
+    <div class="output"></div>
+  </div>
+  <!-- editor where communication graph output displayed -->
+  <div class="header">
+    <header>
+      <h2> <a href="exercises.html" id=backbtn>Back</a></h2>
+    </header>
+  </div>
+  <!-- your content here... -->
+  <script src="js/ide.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
 </html>

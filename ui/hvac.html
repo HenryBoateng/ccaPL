@@ -1,22 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCA Online IDE</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="header">
-      <header>
-        <h2>HVAC</h2>
-      </header>
-    </div>
-    <!--start of menu-->
 
-    <!-- end of menu-->
-     <div class = "container">
-     <div class = "resizeIDE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA Online IDE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <h2>HVAC</h2>
+    </header>
+  </div>
+  <div class="container">
+    <div class="resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
           <option value="cca">Execution Output</option>
           <option value="ccag">Communication Graph</option>
@@ -24,58 +23,57 @@
         </select>
       </div>
       <div class="editor" id="editor">/*
-   A simple HVAC system.
-*/
-BEGIN_DECLS
-   def stateOf(device, value) = {somewhere (device[value[0] | true] |true)}
-   length = 50
-   mode random
-END_DECLS
-T_sensor[!recv(v).if
-	< true > Thermostat::send(v).send(v).0
-	< stateOf(heating, on) > let t = v+2 in send(t).0
-	< stateOf(heating, off) > let t = v-1 in send(t).0
-   fi
-   | send(18).0
-]
-|
-heating[
-   !Thermostat::recv(v).if
-	< v=0 > del on. off[0]
-	< v=1 > del off. on[0]
-   fi
-   | off[0]
-]
-|
-Thermostat[
-   !recv().T_sensor::recv(t).if
-	< t>21 > heating::send(0).send().0
-	< t<15 > heating::send(1).send().0
-	else send().0
-   fi
-   | send().0
-]
-
-
-     </div>
+        A simple HVAC system.
+        */
+        BEGIN_DECLS
+        def stateOf(device, value) = {somewhere (device[value[0] | true] |true)}
+        length = 50
+        mode random
+        END_DECLS
+        T_sensor[!recv(v).if
+        &lt; true &gt; Thermostat::send(v).send(v).0
+        &lt; stateOf(heating, on) &gt; let t = v+2 in send(t).0
+        &lt; stateOf(heating, off) &gt; let t = v-1 in send(t).0
+        fi
+        | send(18).0
+        ]
+        |
+        heating[
+        !Thermostat::recv(v).if
+        &lt; v=0 &gt; del on. off[0]
+        &lt; v=1 &gt; del off. on[0]
+        fi
+        | off[0]
+        ]
+        |
+        Thermostat[
+        !recv().T_sensor::recv(t).if
+        &lt; t&gt;21 &gt; heating::send(0).send().0
+        &lt; t&lt;15 &gt; heating::send(1).send().0
+        else send().0
+        fi
+        | send().0
+        ]
+      </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
         <button class="btn" onclick="executeCode()"> Run </button>
       </div>
-      </div>
-
-      <div class="output"></div>
     </div>
-      <!-- editor where communication graph output displayed -->
-      <div class = "header">
-        <header>
-        <h2> <a href="examples.html" id = backbtn >Back</a></h2>
-      </header>
-    <!-- your content here... -->
-    <script src="js/ide.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/lib/ace.js"></script>
-    <script src="js/lib/theme-monokai.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </body>
+    <div class="output"></div>
+  </div>
+  <!-- editor where communication graph output displayed -->
+  <div class="header">
+    <header>
+      <h2> <a href="examples.html" id=backbtn>Back</a></h2>
+    </header>
+  </div>
+  <!-- your content here... -->
+  <script src="js/ide.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
 </html>

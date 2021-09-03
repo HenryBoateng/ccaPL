@@ -56,6 +56,10 @@ if ($language == "ccagx") {
   exec(
     "$ccaJFP -gx $filePath  && $dot  -Tpdf /Applications/MAMP/htdocs/work/ui/temp/$random"."_1.dot -o /Applications/MAMP/htdocs/work/ui/temp/$random"."_1.pdf 2>&1"
   );
+  if (empty($code)){
+    throw new Exception('no user input.. try again');
+    return 1;
+  }
 }
 
 ?>

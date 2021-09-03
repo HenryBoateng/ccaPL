@@ -1,27 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCA Online IDE</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="header">
-      <header>
-        <h2>CCA Online IDE</h2>
-      </header>
-    </div>
-    <!--start of menu-->
-    <div class="menu" id="menuToggle">MENU</div>
-    <nav id="menuNav">
-      <a href="index.html">CCA IDE</a>
-      <a href="introduction.html">CCA Tutorial</a>
-    </nav>
-    <!-- end of menu-->
-    <div class="underHeader">CCA Online IDE</div>
-     <div class = "container">
-     <div class = "resizeIDE">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA Online IDE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <h2>CCA Online IDE</h2>
+    </header>
+  </div>
+  <!--start of menu-->
+  <div class="menu" id="menuToggle">MENU</div>
+  <nav id="menuNav">
+    <a href="index.html">CCA IDE</a>
+    <a href="introduction.html">CCA Tutorial</a>
+  </nav>
+  <!-- end of menu-->
+  <div class="underHeader">CCA Online IDE</div>
+  <div class="container">
+    <div class="resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
           <option value="cca">Execution Output</option>
           <option value="ccag">Communication Graph</option>
@@ -30,28 +32,28 @@
       </div>
       <div class="editor" id="editor">
         /*
-           A simple wifi model in CCA.
-           - modelled as ambient named wifi.
-           - the boundry of the ambient is the range of the wireless access  point.
-           - a device is in range if it is a child ambient to wifi.
+        A simple wifi model in CCA.
+        - modelled as ambient named wifi.
+        - the boundry of the ambient is the range of the wireless access point.
+        - a device is in range if it is a child ambient to wifi.
         */
 
         // wifi receives a message from the sender and forwards it to the recipient.
         // Both the sender and the recipient must be in the range of the wifi.
 
         wifi[
-          !#recv(sender, recipient, msg).if
-                   < has(recipient)>recipient#send(sender, msg).0
-                  else sender#send(wifi, error).0 //comm error!
-                  fi
+        !#recv(sender, recipient, msg).if
+        &lt;has(recipient)&gt;recipient#send(sender, msg).0
+        else sender#send(wifi, error).0 //comm error!
+        fi
         ]
         |
         alice[
-          in wifi.@send(alice, bob, hello).@recv(s,ack).out.0
+        in wifi.@send(alice, bob, hello).@recv(s,ack).out.0
         ]
         |
         bob[
-         in wifi.@recv(s,ack).@send(bob, s,thanks).out.0
+        in wifi.@recv(s,ack).@send(bob, s,thanks).out.0
         ]
 
       </div>
@@ -59,17 +61,29 @@
       <div class="buttonContainer">
         <button class="btn" onclick="executeCode()"> Run </button>
       </div>
-      </div>
-
-      <div class="output"></div>
     </div>
-      <!-- editor where communication graph output displayed -->
 
-    <!-- your content here... -->
-    <script src="js/ide.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/lib/ace.js"></script>
-    <script src="js/lib/theme-monokai.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </body>
+    <div class="output"></div>
+  </div>
+  <!-- editor where communication graph output displayed -->
+
+  <!-- validation -->
+  <p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+    </a>
+  </p>
+  <p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+    </a>
+  </p>
+  <!-- your content here... -->
+  <script src="js/ide.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
 </html>

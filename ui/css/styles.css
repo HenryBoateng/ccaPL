@@ -328,6 +328,8 @@ pointer-events: none;
   border-radius: 10px;
   border-color: #fff;
   justify-content: space-between;
+  color: #fff;
+  background: #5780a9;
 }
 
 .text {
@@ -359,11 +361,6 @@ flex-direction: column;
   text-decoration: none;
 }
 
-#tryButton{
-  color: #fff;
-  background: #5780a9;
-
-}
 .posBtn{
   display: grid;
   place-items: center;

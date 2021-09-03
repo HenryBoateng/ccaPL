@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCA Tutorial</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA Tutorial</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class = "tutorialPage">
-  <div class = "header">
+
+<body class="tutorialPage">
+  <div class="header">
     <header>
-    <h2>CCA Tutorial</h2>
-  </header>
+      <h2>CCA Tutorial</h2>
+    </header>
   </div>
   <!--start of menu-->
   <div class="menu" id="menuToggle">MENU</div>
@@ -19,138 +21,135 @@
     <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
-  <div class = "underHeader">Exercises</div>
-  <div class = "container" id = "container1">
-<!-- Boxicons CDN link -->
-<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
-<div class="sidebar">
-  <div class "logo_content">
-    <div class ="logo">
-    <div class="logo_name">Contents</div>
- <i class ='bx bx-menu' id='secondbtn'></i>
-</div>
-</div>
-<ul class ="nav_list">
-  <li>
-    <a href ="introduction.html">CCA Introduction</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="editor.html">CCA Editor</a>
-  </li>
-</ul>
-<div class "logo_content">
-  <div class ="logo">
-  <div class="logo_name">Syntax</div>
-</div>
-</div>
-<ul class ="nav_list">
-  <li>
-    <a href ="contextExpression.html">CCA Context Expressions</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="capabilities.html">CCA Capabilities</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="processes.html">CCA Processes</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="locations.html">CCA Locations</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="ambient.html">CCA Ambients</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="comments.html">CCA Comments</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="if.html">CCA If Statement</a>
-  </li>
-</ul>
-<div class "logo_content">
-  <div class ="logo">
-  <div class="logo_name">Exercise</div>
-</div>
-</div>
-<ul class ="nav_list">
-<li>
-  <a href ="exercises.html">CCA Exercises</a>
-</li>
-</ul>
-<ul class ="nav_list">
-<li>
-  <a href ="examples.html">CCA Examples</a>
-</li>
-</ul>
-</div>
-<div class = "introContent">
-  <div class="text">
-  <div class="introFirstPara">Now that we have gone over the basics of CCA, here are a few questions to try out.
-</div>
-</div>
-  <div class="text">
-  <div class="introFirstPara">The following process sends a hello message and receives an acknowledgement:
-    <h4> send(hello).recv(x).0 | P </h4> Give the specification of P. </div>
-</div>
-<div class = posBtn>
-<form action="q1.html" class="tryButton">
-    <input type="submit" value="Question" class="tryButton" id= "tryButton" />
-</form>
-<form action="a1.html" class="tryButton">
-    <input type="submit" value="Answer" class="tryButton" id= "tryButton" />
-</form>
-</div>
-<div class="text">
-<div class="introFirstPara"> write a program that makes ambient 'Henry' always looking to recieve information regarding 'sender, recipient and message' from another sibling ambients. Note: the output should be empty</div>
-</div>
-<div class = posBtn>
-<form action="q2.html" class="tryButton">
-  <input type="submit" value="Question" class="tryButton" id= "tryButton" />
-</form>
-<form action="a2.html" class="tryButton">
-  <input type="submit" value="Answer" class="tryButton" id= "tryButton" />
-</form>
-</div>
-<div class="text">
-<div class="introFirstPara"> Re-create this: m and n are sibling ambients, u is child ambient to n, w is child ambient to m, u sends a message hi to w.</div>
-</div>
-<div class = posBtn>
-<form action="q3.html" class="tryButton">
-  <input type="submit" value="Question" class="tryButton" id= "tryButton" />
-</form>
-<form action="a3.html" class="tryButton">
-  <input type="submit" value="Answer" class="tryButton" id= "tryButton" />
-</form>
-</div>
-<div class="text">
-<div class="introFirstPara">Modify the previous program to allow w to send an acknowledgement thanks to u upon receiving the message.</div>
-</div>
-<div class = posBtn>
-<form action="q4.html" class="tryButton">
-  <input type="submit" value="Question" class="tryButton" id= "tryButton" />
-</form>
-<form action="a4.html" class="tryButton">
-  <input type="submit" value="Answer" class="tryButton" id= "tryButton" />
-</form>
-</div>
-</div>
+  <div class="underHeader">Exercises</div>
+  <div class="container" id="container1">
+    <!-- Boxicons CDN link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo_name">Contents</div>
+        <i class='bx bx-menu' id='secondbtn'></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="introduction.html">CCA Introduction</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="editor.html">CCA Editor</a>
+        </li>
+      </ul>
+      <div class="logo">
+        <div class="logo_name">Syntax</div>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="contextExpression.html">CCA Context Expressions</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="capabilities.html">CCA Capabilities</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="processes.html">CCA Processes</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="locations.html">CCA Locations</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="ambient.html">CCA Ambients</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="comments.html">CCA Comments</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="if.html">CCA If Statement</a>
+        </li>
+      </ul>
+      <div class="logo">
+        <div class="logo_name">Exercise</div>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="exercises.html">CCA Exercises</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="examples.html">CCA Examples</a>
+        </li>
+      </ul>
+    </div>
+    <div class="introContent">
+      <div class="text">
+        <div class="introFirstPara">Now that we have gone over the basics of CCA, here are a few questions to try out.
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">The following process sends a hello message and receives an acknowledgement:
+          <h4> send(hello).recv(x).0 | P </h4> Give the specification of P.
+        </div>
+      </div>
+      <div class=posBtn>
+        <form action="q1.html" class="tryButton">
+          <input type="submit" value="Question" class="tryButton" />
+        </form>
+        <form action="a1.html" class="tryButton">
+          <input type="submit" value="Answer" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara"> write a program that makes ambient 'Henry' always looking to recieve information regarding 'sender, recipient and message' from another sibling ambients. Note: the output should be empty</div>
+      </div>
+      <div class=posBtn>
+        <form action="q2.html" class="tryButton">
+          <input type="submit" value="Question" class="tryButton" />
+        </form>
+        <form action="a2.html" class="tryButton">
+          <input type="submit" value="Answer" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara"> Re-create this: m and n are sibling ambients, u is child ambient to n, w is child ambient to m, u sends a message hi to w.</div>
+      </div>
+      <div class=posBtn>
+        <form action="q3.html" class="tryButton">
+          <input type="submit" value="Question" class="tryButton" />
+        </form>
+        <form action="a3.html" class="tryButton">
+          <input type="submit" value="Answer" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Modify the previous program to allow w to send an acknowledgement thanks to u upon receiving the message.</div>
+      </div>
+      <div class=posBtn>
+        <form action="q4.html" class="tryButton">
+          <input type="submit" value="Question" class="tryButton" />
+        </form>
+        <form action="a4.html" class="tryButton">
+          <input type="submit" value="Answer" class="tryButton" />
+        </form>
+      </div>
+    </div>
+  </div>
   <!-- your content here... -->
-    <script src="js/scripts.js"></script>
-    <script src="js/lib/ace.js"></script>
-    <script src="js/lib/theme-monokai.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
+
 </html>

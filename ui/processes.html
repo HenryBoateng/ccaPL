@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCA Tutorial</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA Tutorial</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class = "tutorialPage">
-  <div class = "header">
+
+<body class="tutorialPage">
+  <div class="header">
     <header>
-    <h2>CCA Tutorial</h2>
-  </header>
+      <h2>CCA Tutorial</h2>
+    </header>
   </div>
   <!--start of menu-->
   <div class="menu" id="menuToggle">MENU</div>
@@ -19,168 +21,158 @@
     <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
-  <div class = "underHeader">Processes</div>
-  <div class = "container" id = "container1">
-<!-- Boxicons CDN link -->
-<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'></link>
-<div class="sidebar">
-  <div class "logo_content">
-    <div class ="logo">
-    <div class="logo_name">Contents</div>
- <i class ='bx bx-menu' id='secondbtn'></i>
-</div>
-</div>
-<ul class ="nav_list">
-  <li>
-    <a href ="introduction.html">CCA Introduction</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="editor.html">CCA Editor</a>
-  </li>
-</ul>
-<div class "logo_content">
-  <div class ="logo">
-  <div class="logo_name">Syntax</div>
-</div>
-</div>
-<ul class ="nav_list">
-  <li>
-    <a href ="contextExpression.html">CCA Context Expressions</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="capabilities.html">CCA Capabilities</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="processes.html">CCA Processes</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="locations.html">CCA Locations</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="ambient.html">CCA Ambients</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="comments.html">CCA Comments</a>
-  </li>
-</ul>
-<ul class ="nav_list">
-  <li>
-    <a href ="if.html">CCA If Statement</a>
-  </li>
-</ul>
-<div class "logo_content">
-  <div class ="logo">
-  <div class="logo_name">Exercise</div>
-</div>
-</div>
-<ul class ="nav_list">
-<li>
-  <a href ="exercises.html">CCA Exercises</a>
-</li>
-</ul>
-<ul class ="nav_list">
-<li>
-  <a href ="examples.html">CCA Examples</a>
-</li>
-</ul>
-</div>
-<div class = "introContent">
-  <div class="text">
-  <div class="introFirstPara">Syntax of processes are described by the following language:
-
-<table>
-  <tr>
-  <th>P,Q ::= </th>
-  <th>Processes</th>
-  </tr>
-  <tr>
-  <th>0</th>
-  <th>inactivity</th>
-  </tr>
-  <tr>
-  <th>M.P</th>
-  <th>sequential composition</th>
-  </tr>
-  <tr>
-  <th>P|Q</th>
-  <th>parallel composition/th>
-  </tr>
-  <tr>
-  <th>!P</th>
-  <th>replication</th>
-  </tr>
-  <tr>
-  <th>new n P</th>
-  <th>name restriction</th>
-  </tr>
-  <tr>
-  <th>n[P]</th>
-  <th>ambient</th>
-  </tr>
-  <tr>
-  <th>{P}</th>
-  <th>brackets</th>
-  </tr>
-  <tr>
-  <th><κ>M.P</th>
-  <th>context-guarded prefix</th>
-  </tr>
-  <tr>
-  <th>proc x(y1, y2, . . . , y`) {P}</th>
-  <th>process abstraction x</th>
-  </tr>
-  <tr>
-  <th>find ˜y : κ for P</th>
-  <th>search</th>
-  </tr>
-  <tr>
-  <th>if <κ1>M1.P1 . . . <κ`>M`.P` fi</th>
-  <th>selection (if)</th>
-  </tr>
-  <tr>
-  <th>if <κ1>M1.P1 . . . <κ`>M`.P` else P fi</th>
-  <th>selection (if-else)</th>
-  </tr>
-  <tr>
-  <th>let x1 = e1, . . . , x` = e` in P</th>
-  <th>let’ statement</th>
-  </tr>
-  </table>
-
-
-</div>
-</div>
-
-  <div class="text">
-  <div class="introFirstPara">The inactivity process or null process 0
-does nothing
-terminates immediately
-is the unit element for the parallel composition of
-processes, i.e.
-0 | P ≡ P | 0 ≡ P
-where the symbol ‘≡’ means ‘is equivalent to’.
-</div>
-</div>
-</div>
-</div>
-
+  <div class="underHeader">Processes</div>
+  <div class="container" id="container1">
+    <!-- Boxicons CDN link -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <div class="sidebar">
+      <div class="logo">
+        <div class="logo_name">Contents</div>
+        <i class='bx bx-menu' id='secondbtn'></i>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="introduction.html">CCA Introduction</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="editor.html">CCA Editor</a>
+        </li>
+      </ul>
+      <div class="logo">
+        <div class="logo_name">Syntax</div>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="contextExpression.html">CCA Context Expressions</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="capabilities.html">CCA Capabilities</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="processes.html">CCA Processes</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="locations.html">CCA Locations</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="ambient.html">CCA Ambients</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="comments.html">CCA Comments</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="if.html">CCA If Statement</a>
+        </li>
+      </ul>
+      <div class="logo">
+        <div class="logo_name">Exercise</div>
+      </div>
+      <ul class="nav_list">
+        <li>
+          <a href="exercises.html">CCA Exercises</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="examples.html">CCA Examples</a>
+        </li>
+      </ul>
+    </div>
+    <div class="introContent">
+      <div class="text">
+        <div class="introFirstPara">Syntax of processes are described by the following language:
+          <table>
+            <tr>
+              <th>P,Q ::= </th>
+              <th>Processes</th>
+            </tr>
+            <tr>
+              <th>0</th>
+              <th>inactivity</th>
+            </tr>
+            <tr>
+              <th>M.P</th>
+              <th>sequential composition</th>
+            </tr>
+            <tr>
+              <th>P|Q</th>
+              <th>parallel composition/th>
+            </tr>
+            <tr>
+              <th>!P</th>
+              <th>replication</th>
+            </tr>
+            <tr>
+              <th>new n P</th>
+              <th>name restriction</th>
+            </tr>
+            <tr>
+              <th>n[P]</th>
+              <th>ambient</th>
+            </tr>
+            <tr>
+              <th>{P}</th>
+              <th>brackets</th>
+            </tr>
+            <tr>
+              <th>&lt;κ&gt;M.P</th>
+              <th>context-guarded prefix</th>
+            </tr>
+            <tr>
+              <th>proc x(y1, y2, . . . , y`) {P}</th>
+              <th>process abstraction x</th>
+            </tr>
+            <tr>
+              <th>find ˜y : κ for P</th>
+              <th>search</th>
+            </tr>
+            <tr>
+              <th>if &lt;κ1&gt;M1.P1 . . . &lt;κ`&gt;M`.P` fi</th>
+              <th>selection (if)</th>
+            </tr>
+            <tr>
+              <th>if &lt;κ1&gt;M1.P1 . . . &lt;κ`&gt;M`.P` else P fi</th>
+              <th>selection (if-else)</th>
+            </tr>
+            <tr>
+              <th>let x1 = e1, . . . , x` = e` in P</th>
+              <th>let’ statement</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">The inactivity process or null process 0
+          does nothing
+          terminates immediately
+          is the unit element for the parallel composition of
+          processes, i.e.
+          0 | P ≡ P | 0 ≡ P
+          where the symbol ‘≡’ means ‘is equivalent to’.
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- your content here... -->
-    <script src="js/ide.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/lib/ace.js"></script>
-    <script src="js/lib/theme-monokai.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/ide.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
+
 </html>

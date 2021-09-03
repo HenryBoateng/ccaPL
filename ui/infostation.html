@@ -1,22 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCA Online IDE</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="header">
-      <header>
-        <h2>Infostation</h2>
-      </header>
-    </div>
-    <!--start of menu-->
 
-    <!-- end of menu-->
-     <div class = "container">
-     <div class = "resizeIDE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA Online IDE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <h2>Infostation</h2>
+    </header>
+  </div>
+  <div class="container">
+    <div class="resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
           <option value="cca">Execution Output</option>
           <option value="ccag">Communication Graph</option>
@@ -25,66 +24,69 @@
       </div>
       <div class="editor" id="editor">
 
-is1[
-   !#recv(s,r,msg).if
-	< has(r) > r#send(s,r,msg).0
-	else isc::send(s,r,msg).0
-   fi
-  |
-  !isc::recv(s,r,msg).if
-	< has(r) > r#send(s,r,msg).0
-	else skip.0
-   fi
-|
- bob[
-   @send(bob,alice,hi).0
-  | out.in is2.out.in is1.0
-]
-|
- alice[
-   @recv(s,r,msg).0
-  | out.in is1.out.in is2.0
-]
-]
-|
-is2[
-   !#recv(s,r,msg).if
-	< has(r) > r#send(s,r,msg).0
-	else isc::send(s,r,msg).0
-   fi
-  |
-  !isc::recv(s,r,msg).if
-	< has(r) > r#send(s,r,msg).0
-	else skip.0
-   fi
-]
-|
-isc[
-   !::recv(s,r,msg).if
-      < at(is1,r) > is1::send(s,r,msg).0
-      < at(is2,r) > is2::send(s,r,msg).0
-     else skip.0
-     fi
-]
+        is1[
+        !#recv(s,r,msg).if
+        &lt; has(r) &gt; r#send(s,r,msg).0
+        else isc::send(s,r,msg).0
+        fi
+        |
+        !isc::recv(s,r,msg).if
+        &lt; has(r) &gt; r#send(s,r,msg).0
+        else skip.0
+        fi
+        |
+        bob[
+        @send(bob,alice,hi).0
+        | out.in is2.out.in is1.0
+        ]
+        |
+        alice[
+        @recv(s,r,msg).0
+        | out.in is1.out.in is2.0
+        ]
+        ]
+        |
+        is2[
+        !#recv(s,r,msg).if
+        &lt; has(r) &gt; r#send(s,r,msg).0
+        else isc::send(s,r,msg).0
+        fi
+        |
+        !isc::recv(s,r,msg).if
+        &lt; has(r) &gt; r#send(s,r,msg).0
+        else skip.0
+        fi
+        ]
+        |
+        isc[
+        !::recv(s,r,msg).if
+        &lt; at(is1,r) &gt; is1::send(s,r,msg).0
+        &lt; at(is2,r) &gt; is2::send(s,r,msg).0
+        else skip.0
+        fi
+
+        ]
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
         <button class="btn" onclick="executeCode()"> Run </button>
       </div>
-      </div>
-
-      <div class="output"></div>
     </div>
-      <!-- editor where communication graph output displayed -->
-      <div class = "header">
-        <header>
-        <h2> <a href="examples.html" id = backbtn >Back</a></h2>
-      </header>
-    <!-- your content here... -->
-    <script src="js/ide.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/lib/ace.js"></script>
-    <script src="js/lib/theme-monokai.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </body>
+
+    <div class="output"></div>
+  </div>
+  <!-- editor where communication graph output displayed -->
+  <div class="header">
+    <header>
+      <h2> <a href="examples.html" id=backbtn>Back</a></h2>
+    </header>
+  </div>
+  <!-- your content here... -->
+  <script src="js/ide.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
 </html>

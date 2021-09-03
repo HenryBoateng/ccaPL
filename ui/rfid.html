@@ -1,22 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCA Online IDE</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body>
-    <div class="header">
-      <header>
-        <h2>RFID</h2>
-      </header>
-    </div>
-    <!--start of menu-->
 
-    <!-- end of menu-->
-     <div class = "container">
-     <div class = "resizeIDE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCA Online IDE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <header>
+      <h2>RFID</h2>
+    </header>
+  </div>
+  <div class="container">
+    <div class="resizeIDE">
       <div class="controlPanel">Output type: &nbsp; &nbsp; <select id="languages" class="languages" onchange="currentLanguage()">
           <option value="cca">Execution Output</option>
           <option value="ccag">Communication Graph</option>
@@ -24,74 +23,86 @@
         </select>
       </div>
       <div class="editor" id="editor">/*
-   CCA model of the Micro-Controller Unit  (MCU).
-   An MCU has:
-     - usb port: USB0
-     - 6 digital slot: D0 ... D5
-     - 4 Analog slot: A0 ... A3
-  The device can input or output to any of these slots.
+        CCA model of the Micro-Controller Unit (MCU).
+        An MCU has:
+        - usb port: USB0
+        - 6 digital slot: D0 ... D5
+        - 4 Analog slot: A0 ... A3
+        The device can input or output to any of these slots.
 
-*/
+        */
 
-lamp[  // This is an actuator. It only receives commands in the slot D0.
-    !recv().home_gateway::recv(x).if
-		< x=0 and not state(off)>skip.find y:state(y) for del y.send().off[0]
-		< x=1 and not state(dim)>skip.find y:state(y) for del y.send().dim[0]
-		< x=2 and not state(on)>skip.find y:state(y) for del y.send().on[0]
-      else send().0
-      fi.0 | send().0
-| off[0] // Initially, the light is  off.
-]
-|
-garage[  // This is an actuator. It only receives commands in the slot D0.
-    !::recv(x).if
-		< x=closed and state(open)>del open.closed[0]
-		< x=open and state(closed)>del closed.open[0]
-      else skip.0
-      fi.0
-| closed[0] // Initially, the fan is  off.
-]
-|
-RFID_reader[
-   ! recv().#recv(v).home_gateway::send(v).home_gateway::recv(status).send().0
- | send().0
-|
- RFID[ //RFID tag
-  ! @send(102).0
-]
-]
-|
-home_gateway[
-   !recv().RFID_reader::recv(v).if
-	< v>100 and v< 200 > RFID_reader::send(valid).if
-		< not state(lamp, dim)> lamp::send(dim).0
-	else skip.0
-   	fi. if < state(garage, closed)> garage::send(open).0
-            else skip.0
-            fi
-     else RFID_reader::send(invalid).0
-     fi.send()
-| send().0
-]
+        BEGIN_DECLS
+        def state(n) = {somewhere (this | n[0] | true)} // state of self.
+        def state(device,value) = { somewhere (device[value[0] | true] | true) }// state of a device.
+        def noCard() = { somewhere (this | next (0) | next (true) | true) }
+
+        // display code
+        //display congruence
+        mode random
+        length = 30
+        END_DECLS
+
+        lamp[ // This is an actuator. It only receives commands in the slot D0.
+        !recv().home_gateway::recv(x).if
+        &lt;x=0 and not state(off)&gt;skip.find y:state(y) for del y.send().off[0]
+        &lt;x=1 and not state(dim)&gt;skip.find y:state(y) for del y.send().dim[0]
+        &lt;x=2 and not state(on)&gt;skip.find y:state(y) for del y.send().on[0]
+        else send().0
+        fi.0 | send().0
+        | off[0] // Initially, the light is off.
+        ]
+        |
+        garage[ // This is an actuator. It only receives commands in the slot D0.
+        !::recv(x).if
+        &lt;x=closed and state(open)&gt;del open.closed[0]
+        &lt;x=open and state(closed)&gt;del closed.open[0]
+        else skip.0
+        fi.0
+        | closed[0] // Initially, the fan is off.
+        ]
+        |
+        RFID_reader[
+        ! recv().#recv(v).home_gateway::send(v).home_gateway::recv(status).send().0
+        | send().0
+        |
+        RFID[ //RFID tag
+        ! @send(102).0
+        ]
+        ]
+        |
+        home_gateway[
+        !recv().RFID_reader::recv(v).if
+        &lt; v&gt;100 and v&lt;200 &gt; RFID_reader::send(valid).if
+        &lt; not state(lamp, dim)&gt; lamp::send(dim).0
+        else skip.0
+        fi. if &lt; state(garage, closed)&gt; garage::send(open).0
+        else skip.0
+        fi
+        else RFID_reader::send(invalid).0
+        fi.send()
+        | send().0
+        ]
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
         <button class="btn" onclick="executeCode()"> Run </button>
       </div>
-      </div>
-
-      <div class="output"></div>
     </div>
-      <!-- editor where communication graph output displayed -->
-      <div class = "header">
-        <header>
-        <h2> <a href="examples.html" id = backbtn >Back</a></h2>
-      </header>
-    <!-- your content here... -->
-    <script src="js/ide.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/lib/ace.js"></script>
-    <script src="js/lib/theme-monokai.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </body>
+    <div class="output"></div>
+  </div>
+  <!-- editor where communication graph output displayed -->
+  <div class="header">
+    <header>
+      <h2> <a href="examples.html" id=backbtn>Back</a></h2>
+    </header>
+  </div>
+  <!-- your content here... -->
+  <script src="js/ide.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/lib/ace.js"></script>
+  <script src="js/lib/theme-monokai.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
 </html>
