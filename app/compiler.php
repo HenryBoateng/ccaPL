@@ -36,7 +36,7 @@ and only gets one cca file */
 
 if ($language == "ccag") {
   exec(
-    "$ccaJFP -g $filePath  && $dot  -Tpdf /Applications/MAMP/htdocs/work/ui/temp/$random.dot -o  /Applications/MAMP/htdocs/work/ui/temp/$random.pdf 2>&1"
+    "$ccaJFP -g $filePath  && $dot  -Tpdf $src/$random.dot -o  $src/$random.pdf 2>&1"
   ); /*this turns the dot files into pdf files using the dot variable
   and gets three files ccag, dot and pdf */
 
@@ -54,7 +54,7 @@ if (empty($code)){
 
 if ($language == "ccagx") {
   exec(
-    "$ccaJFP -gx $filePath  && $dot  -Tpdf /Applications/MAMP/htdocs/work/ui/temp/$random"."_1.dot -o /Applications/MAMP/htdocs/work/ui/temp/$random"."_1.pdf 2>&1"
+    "$ccaJFP -gx $filePath  && $dot  -Tpdf $src/$random"."_1.dot -o $src/$random"."_1.pdf 2>&1"
   );
   if (empty($code)){
     throw new Exception('no user input.. try again');

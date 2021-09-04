@@ -1,11 +1,6 @@
 /* MOBILE AND GLOBAL STYLES */
-
-
 /* applies to screens smaller than 500px (first breakpoint) */
-
-
 /* and above unless overwritten below */
-
 body {
   height: 100%;
   margin: 0;
@@ -13,6 +8,7 @@ body {
   font-family: 'Arial', serif;
   background: #000;
 }
+
 /*nav starts*/
 nav {
   display: none;
@@ -60,8 +56,8 @@ nav a:hover {
   background: #303036;
   cursor: pointer;
 }
-/*end nav*/
 
+/*end nav*/
 * {
   margin: 0;
 }
@@ -86,7 +82,7 @@ nav a:hover {
   font-family: sans-serif;
 }
 
-.container{
+.container {
   display: flex;
 }
 
@@ -102,6 +98,7 @@ nav a:hover {
   background: #fff;
   border: 1px;
 }
+
 /* changing layout of IDE */
 .resizeIDE {
   width: 50%;
@@ -128,6 +125,7 @@ nav a:hover {
   color: #000;
   overflow-y: auto;
 }
+
 /* editor containter 2nd page*/
 .synContainer {
   width: 298px;
@@ -155,6 +153,7 @@ nav a:hover {
   text-align: left;
   padding: 4px;
 }
+
 /*btn design */
 .btn {
   background: #5780a9;
@@ -162,9 +161,10 @@ nav a:hover {
   padding: 8px;
   border: 0;
 }
+
 /*tutorial page*/
-#container1{
-  display:flex;
+#container1 {
+  display: flex;
   overflow-y: scroll;
   position: absolute;
   min-height: 100vh;
@@ -174,8 +174,8 @@ nav a:hover {
   padding-bottom: 4px;
 }
 
-.sidebar{
-  position:absolute;
+.sidebar {
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
@@ -186,36 +186,37 @@ nav a:hover {
   overflow-y: scroll;
 }
 
-.sidebar.active{
+.sidebar.active {
   width: 240px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
-.sidebar .logo_content .logo{
-color: #fff;
-display: flex;
-height: 500px;
-width: 100%;
-align-items: center;
-opacity: 0;
+.sidebar .logo_content .logo {
+  color: #fff;
+  display: flex;
+  height: 500px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
 }
 
-.sidebar.active .logo_name{
+.sidebar.active .logo_name {
   opacity: 1;
   pointer-events: none;
 }
-.sidebar .logo_name{
+
+.sidebar .logo_name {
   opacity: 0;
   pointer-events: none;
 }
 
-.sidebar.active .logo_content .logo{
-opacity: 1;
-pointer-events: none;
+.sidebar.active .logo_content .logo {
+  opacity: 1;
+  pointer-events: none;
 }
 
-.logo_content .logo{
+.logo_content .logo {
   color: #fff;
   display: flex;
   height: 90px;
@@ -223,13 +224,12 @@ pointer-events: none;
   align-items: center;
 }
 
- .logo_content.logo .logo_name{
+.logo_content.logo .logo_name {
   font-size: 20px;
   font-weight: 400;
 }
 
-
-.sidebar #secondbtn{
+.sidebar #secondbtn {
   position: absolute;
   color: #fff;
   left: 50%;
@@ -242,15 +242,15 @@ pointer-events: none;
   transform: translateX(-50%);
 }
 
-.sidebar.active #secondbtn{
-   left: 90%;
+.sidebar.active #secondbtn {
+  left: 90%;
 }
 
-.sidebar ul{
+.sidebar ul {
   margin-top: 20px;
 }
 
-.sidebar ul li{
+.sidebar ul li {
   position: relative;
   height: 50px;
   width: 100%;
@@ -258,33 +258,33 @@ pointer-events: none;
   list-style: none;
   line-height: 50px;
   border-radius: 12px
-  }
+}
 
-.sidebar ul li a{
-    color: #fff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    border-radius: 12px;
-  }
+.sidebar ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+}
 
-.sidebar ul li a:hover{
-    color: #5780a9;
-    background:#fff;
-  }
+.sidebar ul li a:hover {
+  color: #5780a9;
+  background: #fff;
+}
 
-.sidebar .nav_list{
+.sidebar .nav_list {
   opacity: 0;
   pointer-events: none;
 }
 
-.sidebar.active .nav_list{
+.sidebar.active .nav_list {
   opacity: 1;
   pointer-events: auto;
 }
 
-  .introContent  {
+.introContent {
   position: absolute;
   height: 100%;
   width: calc(100% - 40px);
@@ -292,36 +292,35 @@ pointer-events: none;
   margin: auto;
   display: flex;
   text-align: center;
-  }
+}
 
-  .introContent .text{
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 12px;
-    display: flex;
-  }
+.introContent .text {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 12px;
+  display: flex;
+}
 
-  .sidebar.active ~ .introContent{
-    width: calc(100% - 280px);
-    left: 280px;
-  }
+.sidebar.active~.introContent {
+  width: calc(100% - 280px);
+  left: 280px;
+}
 
 /* content explaination tut page*/
+.introFirstPara {
+  display: flex;
+  flex-direction: column;
+  background: #5780a9;
+  border-radius: 2px;
+  padding: 1em;
+  border: 1px #ccc solid;
+  padding: 10px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  white-space: pre-wrap;
+}
 
-  .introFirstPara{
-    display: flex;
-    flex-direction: column;
-    background: #5780a9;
-    border-radius: 2px;
-    padding: 1em;
-    border: 1px #ccc solid;
-    padding: 10px;
-    padding-bottom: 10px;
-    justify-content: space-between;
-    white-space:pre-wrap;
-  }
-
-.tryButton{
+.tryButton {
   display: flex;
   padding-bottom: 5px;
   padding-top: 10px;
@@ -338,46 +337,47 @@ pointer-events: none;
   padding-bottom: 10px;
   justify-content: space-between;
 }
+
 /*outputs explanation*/
-.threeOutputs{
+.threeOutputs {
   display: flex;
   flex-direction: column;
-
-}
-.firstOutput{
-display: flex;
-flex-direction: column;
-
 }
 
-.introContent{
+.firstOutput {
+  display: flex;
+  flex-direction: column;
+}
+
+.introContent {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-#backbtn{
+#backbtn {
   color: #fff;
   text-decoration: none;
 }
 
-.posBtn{
+.posBtn {
   display: grid;
   place-items: center;
+  padding-top: 10px;
 }
 
-.link{
+.link {
   text-decoration: none;
   color: #fff;
 }
-/* TABLET STYLES */
 
+/* TABLET STYLES
 @media screen and (min-width: 500px) {
-  /* applies to screens wider than 499px */
-  /* DESKTOP STYLES */
+   applies to screens wider than 499px
+   DESKTOP STYLES
 }
 
 @media screen and (min-width: 1000px) {
-  /* applies to screens wider than 999px */
-  /* nav ends */
-}
+  applies to screens wider than 999px
+   nav ends
+} */
