@@ -11,7 +11,7 @@
 <body>
   <div class="header">
     <header>
-      <h2>If Statement</h2>
+      <h2>Process Null</h2>
     </header>
   </div>
   <div class="container">
@@ -22,27 +22,20 @@
           <option value="ccagx">Behaviour Graph</option>
         </select>
       </div>
-      <div class="editor" id="editor">/*
-        The if statement is started with the key word 'if' and terminated by the key word 'fi'
-        Like other programs it can be an if-else program */
-        wifi[
-        !#recv(sender, recipient, msg).if
-        &lt; has (recipient) &gt;recipient#send(sender, msg).0
-        else sender#send(wifi, error).0
-        fi
-        ]
+      <div class="editor" id="editor">//try out these examples and notice how they do nothing.
+        /* when trying a new example, uncomment out the example.
+        Also make sure to replace the comment before
+        you try another example */
+        //out.0 | send(5).0
+        //send(5).0 | recv(x).0
+        //send(5).out.0 | recv(x).0
 
-        /* This is a snippet of code, in-which is an ambient 'wifi' that looks
-        to recieve information in the form (sender, recipient, msg) if child 'recipient'
-        is within the range of wifi, else it sends information in the form (wifi, error)
-        to the child 'sender'. */
       </div>
       <!-- editor where code input is put in -->
       <div class="buttonContainer">
         <button class="btn" onclick="executeCode()"> Run </button>
       </div>
     </div>
-
     <div class="output"></div>
   </div>
   <!-- editor where communication graph output displayed -->

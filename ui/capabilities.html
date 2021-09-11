@@ -54,9 +54,63 @@
         </li>
       </ul>
       <ul class="nav_list">
+        <ul class="nav_list">
+          <li>
+            <a href="capabilities.html#skip">Skip Transition</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="capabilities.html#primitives">Primitives</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="capabilities.html#communicationPrimitives">Communication</a>
+          </li>
+        </ul>
+      </ul>
+      <ul class="nav_list">
         <li>
           <a href="processes.html">CCA Processes</a>
         </li>
+      </ul>
+      <ul class="nav_list">
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#nullPro">Null Processes</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#composition">Compositions</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#replication">Replication</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#restriction">Restriction</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#ambientProcess">Ambient Process</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#brackets">Brackets</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#if">Statements</a>
+          </li>
+        </ul>
       </ul>
       <ul class="nav_list">
         <li>
@@ -71,11 +125,6 @@
       <ul class="nav_list">
         <li>
           <a href="comments.html">CCA Comments</a>
-        </li>
-      </ul>
-      <ul class="nav_list">
-        <li>
-          <a href="if.html">CCA If Statement</a>
         </li>
       </ul>
       <div class="logo">
@@ -93,6 +142,9 @@
       </ul>
     </div>
     <div class="introContent">
+      <div class="text">
+        <div class="introFirstPara">Capabilities are elementary actions a process can perform </div>
+      </div>
       <div class="text">
         <div class="introFirstPara">Capabilities are described by the following language:
           <table>
@@ -129,6 +181,80 @@
             </tr>
           </table>
         </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="skip">Skip transition aka skip.P this process performs one transition then continues like the process P.</div>
+      </div>
+      <div class=posBtn>
+        <form action="skip.html">
+          <input type="submit" value="Skip Transition Example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="primitives">Mobility Primitives (in)
+          in m allows an ambient to move into a sibling ambient m</div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Mobility Primitives (out)
+          out allows an ambient to move out of its parent</div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Delete an ambient (del)
+          deletes the ambient n if n has no capabilities; i.e.</div>
+      </div>
+      <div class=posBtn>
+        <form action="primExamples.html">
+          <input type="submit" value="Primitives Example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="communicationPrimitives">Communication Primitives(send/recv)
+
+          Message passing communication:
+          one process (the sender) sends a message n and another process (the receiver) receives it in a variable x.
+
+          Sender : send(n).P Receiver : recv(x).Q</div>
+      </div>
+      <div class=posBtn>
+        <form action="communicationPrimitives.html">
+          <input type="submit" value="Communication Primitives Example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Communication Primitives(send/recv) continued..
+          Can model both synchronous and asynchronous communications
+
+          Synchronous communication: both the sender and the receiver wait for each other
+          Sender : send(2).P
+          Receiver : recv(x).Q
+          P and Q cannot be executed until the communication has taken placed.
+
+          Asynchronous communication: the sender does not wait for the communication to take place. Sender : send(2).0 | P
+          Receiver : recv(x).Q
+          Q cannot be executed until the communication takes place; but P can be executed before the communication takes place.</div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Capabilities to send a message:
+          send(a): capability to send a message a to self
+          n@send(a): capability to send a message a to the parent ambient n
+          @send(a): capability to send a message a to any parent ambient
+          n#send(a): capability to send a message a to the child ambient n
+          #send(a): capability to send a message a to any child ambient
+          n :: send(a): capability to send a message a to the sibling ambient n
+          :: send(a): capability to send a message a to any sibling ambient</div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Capabilities to receive a message:
+          recv(x): capability to receive a message a from self
+          n@recv(x): capability to receive in the variable x a message from the parent ambient n
+          @recv(x): capability to receive in the variable x a message from any parent ambient n#recv(x): capability to receive in the variable x a message from the child ambient n #recv(x): capability to receive in the variable x a message from any
+          child ambient
+          n :: recv(x): capability to send receive in the variable x a message from the sibling ambient n :: recv(x): capability to receive in the variable x a message from any sibling ambient</div>
+      </div>
+      <div class=posBtn>
+        <form action="capabilityExamples.html">
+          <input type="submit" value="Communicatoin Primitives examples" class="tryButton" />
+        </form>
       </div>
     </div>
   </div>

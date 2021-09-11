@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', serif;
-  background: #000;
+  background: #1e2123;
 }
 
 /*nav starts*/
@@ -20,18 +20,18 @@ nav {
 nav a {
   padding: 1.25em 1.5em;
   color: #fff;
-  background: #000;
+  background: #1e2123;
   text-decoration: none;
   transition: all 1.5s;
 }
 
 nav a:hover {
-  color: #000;
+  color: #5780a9;
   background: #fff;
 }
 
 .menu {
-  background: #000;
+  background: #1e2123;
   text-align: center;
   color: #fff;
   line-height: 5em;
@@ -44,7 +44,7 @@ nav a:hover {
 }
 
 .nav {
-  background: #000;
+  background: #1e2123;
   color: #fff;
   list-style: none;
   text-align: right;
@@ -52,9 +52,10 @@ nav a:hover {
 }
 
 .menu:hover {
-  color: #fff;
-  background: #303036;
+  color: #5780a9;
+  background: #fff;
   cursor: pointer;
+  transition: all 1s
 }
 
 /*end nav*/
@@ -87,7 +88,7 @@ nav a:hover {
 }
 
 .controlPanel {
-  background: #000;
+  background: #1e2123;
   color: #fff;
   text-align: right;
   padding: 4px;
@@ -183,13 +184,15 @@ nav a:hover {
   background: #5780a9;
   padding: 6px 14px;
   transition: all 0.5s ease;
-  overflow-y: scroll;
+  overflow: hidden;
 }
+
 
 .sidebar.active {
   width: 240px;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .sidebar .logo_content .logo {
@@ -312,7 +315,6 @@ nav a:hover {
   flex-direction: column;
   background: #5780a9;
   border-radius: 2px;
-  padding: 1em;
   border: 1px #ccc solid;
   padding: 10px;
   padding-bottom: 10px;

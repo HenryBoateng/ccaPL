@@ -54,9 +54,63 @@
         </li>
       </ul>
       <ul class="nav_list">
+        <ul class="nav_list">
+          <li>
+            <a href="capabilities.html#skip">Skip Transition</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="capabilities.html#primitives">Primitives</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="capabilities.html#communicationPrimitives">Communication</a>
+          </li>
+        </ul>
+      </ul>
+      <ul class="nav_list">
         <li>
           <a href="processes.html">CCA Processes</a>
         </li>
+      </ul>
+      <ul class="nav_list">
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#nullPro">Null Processes</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#composition">Compositions</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#replication">Replication</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#restriction">Restriction</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#ambientProcess">Ambient Process</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#brackets">Brackets</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="processes.html#if">Statements</a>
+          </li>
+        </ul>
       </ul>
       <ul class="nav_list">
         <li>
@@ -71,11 +125,6 @@
       <ul class="nav_list">
         <li>
           <a href="comments.html">CCA Comments</a>
-        </li>
-      </ul>
-      <ul class="nav_list">
-        <li>
-          <a href="if.html">CCA If Statement</a>
         </li>
       </ul>
       <div class="logo">
@@ -94,6 +143,14 @@
     </div>
     <div class="introContent">
       <div class="text">
+        <div class="introFirstPara" id="process">Processes: which denote a computation (i.e. behaviour)
+
+          In the syntax of processes, the following notations are used:
+          P, Q: denote processes
+          n, x: are names M: denotes a capability
+          κ: denotes a context expression</div>
+      </div>
+      <div class="text">
         <div class="introFirstPara">Syntax of processes are described by the following language:
           <table>
             <tr>
@@ -110,7 +167,7 @@
             </tr>
             <tr>
               <th>P|Q</th>
-              <th>parallel composition/th>
+              <th>parallel composition</th>
             </tr>
             <tr>
               <th>!P</th>
@@ -156,13 +213,131 @@
         </div>
       </div>
       <div class="text">
-        <div class="introFirstPara">The inactivity process or null process 0
+        <div class="introFirstPara" id="nullPro">The inactivity process or null process 0
           does nothing
           terminates immediately
           is the unit element for the parallel composition of
           processes, i.e.
           0 | P ≡ P | 0 ≡ P
           where the symbol ‘≡’ means ‘is equivalent to’.
+        </div>
+      </div>
+      <div class=posBtn>
+        <form action="processNull.html">
+          <input type="submit" value="Null process example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="composition">Parallel Composition (P | Q) means that the process P and the process Q execute concurrently
+          we also say P and Q execute in parallel i.e. P and Q execute at the same time
+          during their execution, P and Q can communicate by message passing
+
+          Properties of parallel composition of processes (the symbol ≡ means is equivalent to.)
+          0 is the unit element (0 | P ≡ P | 0 ≡ P)
+          Commutative (i.e. the syntactic order does not matter)( P | Q ≡ Q | P)
+          Associative (i.e. the execution order does not matter) (P | (Q | R) ≡ (P | Q) | R ≡ P | Q | R)</div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Sequential Composition (M.P)
+          MP this process performs the capability M then continues like the process P.</div>
+      </div>
+      <div class=posBtn>
+        <form action="sequentialComposition.html">
+          <input type="submit" value="Sequential Composition (M.P) example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="replication">Replication (!P)
+          !P denotes a process which can always creates a new copy of the process P
+          !P ≡ P | !P
+          Can be used to model iteration and recursion</div>
+      </div>
+      <div class=posBtn>
+        <form action="replication.html">
+          <input type="submit" value="Replication (!P) example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="restriction">Restriction (new n P)
+          The restriction new n P states that n is a new name visible only in the process P.
+          So the name n cannot be referred to outside P.
+          Similar to the declaration of local variables in programming languages like C or Java.
+          Also use to hide the name n in P so that no other process can ‘see’ it.</div>
+      </div>
+      <div class=posBtn>
+        <form action="restriction.html">
+          <input type="submit" value="Restriction (new n P) example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="ambientProcess">Ambient process (n[P])
+          n[P] represents an ambient named n with behaviour described by the process P.
+          P specifies the capabilities that the ambient n can perform.
+          it is also said that the ambient n executes the process P.</div>
+      </div>
+      <div class=posBtn>
+        <form action="ambientExampleProcess.html">
+          <input type="submit" value="Ambient Process (n[P]) example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="brackets">Brackets ({P})
+          {P} behaves just like P.
+          Brackets are used to describe complex processes.
+          Used only as suffix process, i.e. in the form P.{Q}</div>
+      </div>
+      <div class=posBtn>
+        <form action="brackets.html">
+          <input type="submit" value="Brackets([P]) example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="if">If statements within CCA, is initiated via the if key word and is terminated via the fi keyword.
+          Like other programmgin languages, one can use the if statement as a decision-making statement which guides a program to make decisions based on specified criteria.The IF statement executes one set of code if a specified condition is met
+          (TRUE) or another set of code evaluates to FALSE.</div>
+      </div>
+      <div class=posBtn>
+        <form action="ifExample.html">
+          <input type="submit" value="If stastement example" class="tryButton" />
+        </form>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="if">find y1, . . . , yn : κ for P
+          searches for a list of names z1, . . . ,zn such that the
+          environment satisfies the context expression
+          κ{y1 ← z1, . . . , yn ← zn} and then continues like
+          P{y1 ← z1, . . . , yn ← zn}.</div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="if">if
+          <κ1>M1.P1
+            <κ2>M2.P2
+              . . .
+              <κ`>M`
+                .P`
+                fi
+                waits until one of the branches, j say, becomes enabled
+                (i.e. can be executed) and proceeds like <κj>Mj
+                  .Pj
+                  if many branches are enabled at the same time, one of
+                  them is chosen non-deterministically and executed.
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="if">if
+          <κ1>M1.P1
+            <κ2>M2.P2
+              . . .
+              <κ`>M`
+                .P`
+                else P
+                fi
+                If one of the branches, j say, is enabled (i.e. can be
+                executed) then it proceeds like <κj>Mj
+                  .Pj
+                  If many branches are enabled at the same time, one of
+                  them is chosen non-deterministically and executed.
+                  If none of the branches is enabled, then it proceeds like P.
         </div>
       </div>
     </div>
