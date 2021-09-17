@@ -49,6 +49,63 @@
         </li>
       </ul>
       <ul class="nav_list">
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#emptyContext">Empty Context</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#true">True/False</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#nM">Name Match</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#ths">This</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#loCa">Location</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#pCom">Parallel Composition</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#anD">And</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#or">Or</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#sNM">Spatial Next Modality</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#sMod">Somewhere Modality</a>
+          </li>
+        </ul>
+        <ul class="nav_list">
+          <li>
+            <a href="contextExpression.html#neg">Negation</a>
+          </li>
+        </ul>
+      </ul>
+      <ul class="nav_list">
         <li>
           <a href="capabilities.html">CCA Capabilities</a>
         </li>
@@ -114,17 +171,17 @@
       </ul>
       <ul class="nav_list">
         <li>
-          <a href="locations.html">CCA Locations</a>
-        </li>
-      </ul>
-      <ul class="nav_list">
-        <li>
           <a href="ambient.html">CCA Ambients</a>
         </li>
       </ul>
       <ul class="nav_list">
         <li>
           <a href="comments.html">CCA Comments</a>
+        </li>
+      </ul>
+      <ul class="nav_list">
+        <li>
+          <a href="errorMessage.html">CCA Error Message</a>
         </li>
       </ul>
       <div class="logo">
@@ -201,6 +258,208 @@
               <th>somewhere modality</th>
             </tr>
           </table>
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">
+          Context expressions (CEs) are commonly used inside an
+          ambient, in the form:
+          λ[< κ> M.P | Q]
+            where
+            κ is a CE
+            M is a capability, and
+            P and Q are processes.
+            We say that λ is the ambient evaluating the context
+            expression κ.
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="emptyContext">
+          Empty Context
+
+          The context-expression 0 holds only for the empty context 0.
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="true">
+          True/False
+
+          true holds for all contexts.
+          false holds for no contexts.
+          false is equivalent to not true
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="nM">
+          Name Match
+
+          n = m holds for a context if the names n and m are lexically identical
+          Example
+          2 = 2 evaluates to true for all contexts.
+          n = n evaluates to true for all contexts.
+          2 = 3 evaluates to false for all contexts.
+          alice = bob evaluates to false for all contexts
+          In addition to the match operator ‘=’, the following predicates can be used:
+          ‘<’: less than; e.g. n < m ‘<=’: less than or equal ; e.g. n <=m ‘>’: greater than; e.g. n > m
+            ‘>=’: greater than or equal; e.g. n >= m
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="ths">
+          This
+
+          this holds solely for the hole context
+          Example
+          this holds for the context
+          this does not hold for the context phone[]
+          this does not hold for the context
+          bob[phone[] | pda[R] | Q]
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="loCa">
+          Location
+
+          n[κ] holds for a context if that context is of the form n[C] such
+          that κ holds for the context C.
+          phone[this] holds for the context phone[]
+          phone[true] holds for the context phone[]
+          bob[phone[this]] holds for the context bob[phone[]]
+          pda[this] does not hold for the context phone[]
+          phone[this] does not hold for the context
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara">Syntax of Location α are described by the following language:
+          <table>
+            <tr>
+              <th>α ::= @</th>
+              <th>any parent ambient</th>
+            </tr>
+            <tr>
+              <th>n@</th>
+              <th>parent n</th>
+            </tr>
+            <tr>
+              <th>#</th>
+              <th>any child ambient</th>
+            </tr>
+            <tr>
+              <th>n#</th>
+              <th>child n</th>
+            </tr>
+            <tr>
+              <th>::</th>
+              <th>any sibling ambient</th>
+            </tr>
+            <tr>
+              <th>n ::</th>
+              <th>sibling n</th>
+            </tr>
+            <tr>
+              <th>Ɛ</th>
+              <th>locally (empty string)</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="pCom">
+          Parallel Composition
+
+          κ1 | κ2 holds for a context C if that context is of the form
+          C = C1 | C2 such that κ1 holds for C1 and κ2 holds for C2.
+          Example
+          this | true holds for the context | pda[R]
+          phone[this] | pda[true] holds for the context phone[] | pda[R]
+          phone[this] | true holds for the context phone[] | pda[R]
+          bob[phone[this] | pda[true] | true] holds for the context
+          bob[phone[] | pda[R] | Q]
+          bob[true | pda[true] | true] holds for the context
+          bob[phone[] | pda[R] | Q]
+          this | phone[true] does not hold for the context | pda[R]
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="anD">
+          And
+
+          κ1 and κ2 holds for a context if κ1 holds for that context and κ2
+          also holds for that context.
+          Example
+          phone[this] and phone[true] holds for the context phone[]
+          bob[phone[this] | true] and bob[true] holds for the context
+          bob[phone[] | R]
+          phone[this] and phone[true] does not hold for the context phone[0]
+          bob[phone[this] | true] and bob[true] does not hold for the context
+          bob[pda[] | R]
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="or">
+          Or
+
+          κ1 or κ2 holds for a context if κ1 holds for that context or κ2
+          holds for that context.
+          Example
+          phone[this] or phone[true] holds for the context phone[]
+          bob[phone[this] | true] or bob[true] holds for the context
+          bob[phone[] | R]
+          phone[this] or phone[true] holds for the context phone[0]
+          bob[phone[this] | true] or bob[true] holds for the context
+          bob[pda[] | R]
+          phone[this] or phone[true] holds for the context
+          bob[phone[this] | true] or bob[true] holds for the context
+          alice[phone[] | R]
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="sNM">
+          Spatial Next Modality
+
+          next κ holds for a context C if that context is of the form
+          C = n[C
+          0
+          ] and κ holds for C
+          0
+          .
+          The operator next is called the spatial next modality.
+          Example
+          next this holds for the context phone[]
+          next (phone[true] | this) holds for the context bob[phone[R] |]
+          next (true | this) holds for the context bob[phone[R] |]
+          next ((next true) | this) holds for the context bob[phone[R] |]
+          next this dose not hold for the context bob[phone[R] |]
+          next this does not hold for the context bob[phone[]]
+          next next this holds for the context bob[phone[]]
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id="sMod">
+          Somehwere Modality
+
+          somewhere κ holds for a context if there exists somewhere in
+          that context a sub-context for which κ holds.
+          Example
+          somewhere this holds for the context
+          somewhere this holds for the context phone[]
+          somewhere this holds for the context bob[phone[] | R]
+          somewhere this holds for the context conf [bob[phone[] | R] | Q]
+          somewhere this does not hold for the context 0
+          somewhere this does not hold for the context phone[0]
+          somewhere this does not hold for the context conf [bob[phone[0]]]
+        </div>
+      </div>
+      <div class="text">
+        <div class="introFirstPara" id=neg>
+          Negation
+
+          not κ holds for a context if κ does not hold for that context.
+          Example
+          not this holds for the context phone[]
+          not next true holds for the context
+          not this does not hold for the context
+          not next true does not hold for the context phone[]
         </div>
       </div>
     </div>

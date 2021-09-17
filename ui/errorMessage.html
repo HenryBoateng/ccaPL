@@ -21,7 +21,7 @@
     <a href="introduction.html">CCA Tutorial</a>
   </nav>
   <!-- end of menu-->
-  <div class="underHeader">Capabilities</div>
+  <div class="underHeader">Comments</div>
   <div class="container" id="container1">
     <!-- Boxicons CDN link -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -199,119 +199,31 @@
       </ul>
     </div>
     <div class="introContent">
-      <div class="text">
-        <div class="introFirstPara">Capabilities are elementary actions a process can perform </div>
-      </div>
-      <div class="text">
-        <div class="introFirstPara">Capabilities are described by the following language:
-          <table>
-            <tr>
-              <th>M ::= skip</th>
-              <th>a single transition</th>
-            </tr>
-            <tr>
-              <th>in n</th>
-              <th>move into the ambient n</th>
-            </tr>
-            <tr>
-              <th>out</th>
-              <th>move out of current location</th>
-            </tr>
-            <tr>
-              <th>del n</th>
-              <th>delete the ambient n</th>
-            </tr>
-            <tr>
-              <th>α x(z1,z2, . . . ,z`)</th>
-              <th>call the process x defined in location α,
-                with actual parameters z1,z2, . . . ,z`</th>
-            </tr>
-            <tr>
-              <th>α recv(y1, y2, . . . , y`)</th>
-              <th>receive into y1, y2, . . . , y` a list of
-                messages from location α</th>
-            </tr>
-            <tr>
-              <th>α send(z1,z2, . . . ,z`)</th>
-              <th>send a list of messages z1,z2, . . . ,z`
-                to location α</th>
-            </tr>
-          </table>
+      <div class="AmbientNormal">
+        <div class="text">
+          <div class="introFirstPara">Programs are first parsed for syntax errors and then
+            executed if no error is detected.
+          </div>
+          <div class="text">
+            <div class="introFirstPara">When an error is detected, the parser displays an error
+              message then terminates. Error messages have the
+              following form:
+              CCA Parser Version 3.0 : Reading from file prg2.cca . . .
+              CCA Parser Version 3.0 : Encountered errors during parse.
+              ParseException: Encountered " &lt;NAME&gt; "y "" at line 8, column 3.
+              Was expecting one of:
+              "def" ...
+              "END_DECLS" ...
+              "display" ...
+              "mode" ...
+            </div>
+          </div>
+          <div class=posBtn>
+            <form action="errorExample.html">
+              <input type="submit" value="Try it yourself" class="tryButton" />
+            </form>
+          </div>
         </div>
-      </div>
-      <div class="text">
-        <div class="introFirstPara" id="skip">Skip transition aka skip.P this process performs one transition then continues like the process P.</div>
-      </div>
-      <div class=posBtn>
-        <form action="skip.html">
-          <input type="submit" value="Skip Transition Example" class="tryButton" />
-        </form>
-      </div>
-      <div class="text">
-        <div class="introFirstPara" id="primitives">Mobility Primitives (in)
-          in m allows an ambient to move into a sibling ambient m</div>
-      </div>
-      <div class="text">
-        <div class="introFirstPara">Mobility Primitives (out)
-          out allows an ambient to move out of its parent</div>
-      </div>
-      <div class="text">
-        <div class="introFirstPara">Delete an ambient (del)
-          deletes the ambient n if n has no capabilities; i.e.</div>
-      </div>
-      <div class=posBtn>
-        <form action="primExamples.html">
-          <input type="submit" value="Primitives Example" class="tryButton" />
-        </form>
-      </div>
-      <div class="text">
-        <div class="introFirstPara" id="communicationPrimitives">Communication Primitives(send/recv)
-
-          Message passing communication:
-          one process (the sender) sends a message n and another process (the receiver) receives it in a variable x.
-
-          Sender : send(n).P Receiver : recv(x).Q</div>
-      </div>
-      <div class=posBtn>
-        <form action="communicationPrimitives.html">
-          <input type="submit" value="Communication Primitives Example" class="tryButton" />
-        </form>
-      </div>
-      <div class="text">
-        <div class="introFirstPara">Communication Primitives(send/recv) continued..
-          Can model both synchronous and asynchronous communications
-
-          Synchronous communication: both the sender and the receiver wait for each other
-          Sender : send(2).P
-          Receiver : recv(x).Q
-          P and Q cannot be executed until the communication has taken placed.
-
-          Asynchronous communication: the sender does not wait for the communication to take place. Sender : send(2).0 | P
-          Receiver : recv(x).Q
-          Q cannot be executed until the communication takes place; but P can be executed before the communication takes place.</div>
-      </div>
-      <div class="text">
-        <div class="introFirstPara">Capabilities to send a message:
-          send(a): capability to send a message a to self
-          n@send(a): capability to send a message a to the parent ambient n
-          @send(a): capability to send a message a to any parent ambient
-          n#send(a): capability to send a message a to the child ambient n
-          #send(a): capability to send a message a to any child ambient
-          n :: send(a): capability to send a message a to the sibling ambient n
-          :: send(a): capability to send a message a to any sibling ambient</div>
-      </div>
-      <div class="text">
-        <div class="introFirstPara">Capabilities to receive a message:
-          recv(x): capability to receive a message a from self
-          n@recv(x): capability to receive in the variable x a message from the parent ambient n
-          @recv(x): capability to receive in the variable x a message from any parent ambient n#recv(x): capability to receive in the variable x a message from the child ambient n #recv(x): capability to receive in the variable x a message from any
-          child ambient
-          n :: recv(x): capability to send receive in the variable x a message from the sibling ambient n :: recv(x): capability to receive in the variable x a message from any sibling ambient</div>
-      </div>
-      <div class=posBtn>
-        <form action="capabilityExamples.html">
-          <input type="submit" value="Communicatoin Primitives examples" class="tryButton" />
-        </form>
       </div>
     </div>
   </div>

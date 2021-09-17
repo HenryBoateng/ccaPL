@@ -1,0 +1,52 @@
+BEGIN_DECLS
+
+   def has(n) = { somewhere (this | n[true] | true) }
+   def at(n) = { somewhere (n[next (this | true)] | true) }
+   def at(n, m) = { somewhere (n[m[true] | true] | true) }
+   //length = 100
+   mode random
+   //display code
+END_DECLS
+
+is1[
+   !#recv(s,r,msg).if
+	< has(r) > r#send(s,r,msg).0
+	else isc::send(s,r,msg).0
+   fi
+  |
+  !isc::recv(s,r,msg).if
+	< has(r) > r#send(s,r,msg).0
+	else skip.0
+   fi
+|
+ bob[ 
+   @send(bob,alice,hi).0
+  | out.in is2.out.in is1.0
+]
+|
+ alice[ 
+   @recv(s,r,msg).0
+  | out.in is1.out.in is2.0
+]
+]
+|
+is2[
+   !#recv(s,r,msg).if
+	< has(r) > r#send(s,r,msg).0
+	else isc::send(s,r,msg).0
+   fi
+  |
+  !isc::recv(s,r,msg).if
+	< has(r) > r#send(s,r,msg).0
+	else skip.0
+   fi
+]
+| 
+isc[
+   !::recv(s,r,msg).if
+      < at(is1,r) > is1::send(s,r,msg).0
+      < at(is2,r) > is2::send(s,r,msg).0
+     else skip.0
+     fi
+]
+

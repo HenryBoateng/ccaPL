@@ -3,14 +3,27 @@ use Mockery as m;
 use PHPUnitTest\Framework\TestCase;
 
 class PHPUnitTest extends \PHPUnit\Framework\TestCase{
+public function testMatch(){
 
-public function testStrMatch()
-{
-  require 'compiler.php';
+$language = "cca";
 
-  $random = 'cca';
+$this ->assertEquals($language, "cca");
 
-  $this->assertMatch ($output, shell_exec(
-      "$ccaJFP -e $filePath 2>&1");
+}
+public function testMatchTwo(){
+
+$language = "ccag";
+
+$this ->assertEquals($language, "ccag");
+
+}
+
+public function testMatchThree(){
+
+$language = "ccagx";
+
+$this ->assertEquals($language, "ccagx");
+
+}
 }
  ?>
